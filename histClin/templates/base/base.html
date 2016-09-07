@@ -1,0 +1,364 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<!-- Template Name: Rapido - Responsive Admin Template build with Twitter Bootstrap 3.x Version: 1.0 Author: ClipTheme -->
+<!--[if IE 8]><html class="ie8" lang="en"><![endif]-->
+<!--[if IE 9]><html class="ie9" lang="en"><![endif]-->
+<!--[if !IE]><!-->
+<html lang="es">
+	<!--<![endif]-->
+	<!-- start: HEAD -->
+	<head>
+	{% block extrastatic %}	
+	{% endblock %}
+	
+		<title>Historia Clinica</title>
+		<!-- start: META -->
+		<meta charset="utf-8" />
+		<!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta content="" name="description" />
+		<meta content="" name="author" />
+		<!-- end: META -->
+		<!-- start: MAIN CSS -->
+		<link href='http://fonts.googleapis.com/css?family=Raleway:400,300,500,600,700,200,100,800' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="{% static 'plugins/bootstrap/css/bootstrap.min.css' %}">
+		<link rel="stylesheet" href="{% static 'plugins/font-awesome/css/font-awesome.min.css' %}">
+		<link rel="stylesheet" href="{% static 'plugins/iCheck/skins/all.css' %}">
+		<link rel="stylesheet" href="{% static 'plugins/perfect-scrollbar/src/perfect-scrollbar.css' %}">
+		<link rel="stylesheet" href="{% static 'plugins/animate.css/animate.min.css' %}">
+		<!-- end: MAIN CSS -->
+		<!-- start: CSS REQUIRED FOR SUBVIEW CONTENTS -->
+		<link rel="stylesheet" href="{% static 'plugins/owl-carousel/owl-carousel/owl.carousel.css' %}">
+		<link rel="stylesheet" href="{% static 'plugins/owl-carousel/owl-carousel/owl.theme.css' %}">
+		<link rel="stylesheet" href="{% static 'plugins/owl-carousel/owl-carousel/owl.transitions.css' %}">
+		<link rel="stylesheet" href="{% static 'plugins/summernote/dist/summernote.css'">
+		<link rel="stylesheet" href="{% static 'plugins/fullcalendar/fullcalendar/fullcalendar.css' %}">
+		<link rel="stylesheet" href="{% static 'plugins/toastr/toastr.min.css'">
+		<link rel="stylesheet" href="{% static 'plugins/bootstrap-select/bootstrap-select.min.css'">
+		<link rel="stylesheet" href="{% static 'plugins/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.min.css' %}">
+		<link rel="stylesheet" href="{% static 'plugins/DataTables/media/css/DT_bootstrap.css' %}">
+		<link rel="stylesheet" href="{% static 'plugins/bootstrap-fileupload/bootstrap-fileupload.min.css' %}">
+		<link rel="stylesheet" href="{% static 'plugins/bootstrap-daterangepicker/daterangepicker-bs3.css' %}">
+		<!-- end: CSS REQUIRED FOR THIS SUBVIEW CONTENTS-->
+		<!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
+		<link rel="stylesheet" href="{% static 'plugins/bootstrap-social-buttons/bootstrap-social.css' %}">
+		<!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
+		<!-- start: CORE CSS -->
+		<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+		<link rel="stylesheet" href="{% static 'css/styles-responsive.css' %}">
+		<link rel="stylesheet" href="{% static 'css/plugins.css' %}">
+		<link rel="stylesheet" href="{% static 'css/themes/theme-default.css' %}" type="text/css" id="skin_color">
+		<link rel="stylesheet" href="{% static 'css/print.css' %}" type="text/css" media="print"/>
+		<!-- end: CORE CSS -->
+		<link rel="shortcut icon" href="{% static favicon.ico %}" />
+	</head>
+
+
+<!-- end: HEAD -->
+	<!-- start: BODY -->
+	<body class="single-page">
+	<div class="main-wrapper">
+			<!-- start: TOPBAR -->
+			<header class="topbar navbar navbar-inverse navbar-fixed-top inner">
+				<!-- start: TOPBAR CONTAINER -->
+				<div class="container">
+					<div class="navbar-header">
+						<a class="sb-toggle-left hidden-md hidden-lg" href="#main-navbar">
+							<i class="fa fa-bars"></i>
+						</a>
+						<!-- start: LOGO -->
+						<a class="navbar-brand" href="index.html">
+							<img src="{% static 'images/logo.png' %}" alt="Rapido"/>
+						</a>
+						<!-- end: LOGO -->
+						
+					</div>
+					<div class="topbar-tools">
+						<!-- start: TOP NAVIGATION MENU -->
+						<ul class="nav navbar-right">
+							<!-- start: USER DROPDOWN -->
+							<li class="dropdown current-user">
+								<a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#">
+									<img src="{% static 'images/avatar-1-small.jpg' %}" class="img-circle" alt=""> <span class="username hidden-xs">Peter Clark</span> <i class="fa fa-caret-down "></i>
+								</a>
+								<ul class="dropdown-menu dropdown-dark">
+										<a href="login_login.html">
+											Log Out
+										</a>
+									</li>
+								</ul>
+							</li>
+							<!-- end: USER DROPDOWN -->							
+						</ul>
+						<!-- end: TOP NAVIGATION MENU -->
+					</div>
+				</div>
+				<!-- end: TOPBAR CONTAINER -->
+			</header>
+			<!-- end: TOPBAR -->
+			<!-- start: PAGESLIDE LEFT -->
+			<a class="closedbar inner hidden-sm hidden-xs" href="#">
+			</a>
+			<nav id="pageslide-left" class="pageslide inner">
+				<div class="navbar-content">
+					<!-- start: SIDEBAR -->
+					<div class="main-navigation left-wrapper transition-left">
+						<div class="navigation-toggler hidden-sm hidden-xs">
+							<a href="#main-navbar" class="sb-toggle-left">
+							</a>
+						</div>
+						<div class="user-profile border-top padding-horizontal-10 block">
+							<div class="inline-block">
+								<img src="{% static 'images/avatar-1.jpg' %}" alt="">
+							</div>
+							<div class="inline-block">
+								<h5 class="no-margin"> Welcome </h5>
+								<h4 class="no-margin"> Peter Clark </h4>
+								<a class="btn user-options sb_toggle">
+									<i class="fa fa-cog"></i>
+								</a>
+							</div>
+						</div>
+						{% block navbar %}
+						
+						<!-- start: MAIN NAVIGATION MENU -->
+						<ul class="main-navigation-menu">
+							<li class="start">
+								<a href="layouts_single_content_0.html"><i class="fa fa-home"></i> <span class="title"> Dashboard </span><span class="label label-default pull-right ">LABEL</span> </a>
+							</li>
+							
+							<li>
+								<a href="javascript:void(0)"><i class="fa fa-th-large"></i> <span class="title"> Historias Clinicas </span><i class="icon-arrow"></i> </a>
+								<ul class="sub-menu">
+									<li>
+										<a href="layouts_single_content_1.html">
+											<span class="title">Ajax Sample Page 1</span>
+										</a>
+									</li>
+									<li>
+										<a href="layouts_single_content_2.html">
+											<span class="title">Ajax Sample Page 2</span>
+										</a>
+									</li>
+									<li>
+										<a href="layouts_single_content_3.html">
+											<span class="title">Ajax Sample Page 3</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+						<!-- end: MAIN NAVIGATION MENU -->
+						
+						
+						
+						
+						<!-- end: MAIN NAVIGATION MENU -->
+					</div>
+					
+						{% endblock %}
+					
+					<!-- end: SIDEBAR -->
+				</div>
+				<div class="slide-tools">
+					<div class="col-xs-6 text-left no-padding">
+						<a class="btn btn-sm status" href="#">
+							Status <i class="fa fa-dot-circle-o text-green"></i> <span>Online</span>
+						</a>
+					</div>
+					<div class="col-xs-6 text-right no-padding">
+						<a class="btn btn-sm log-out text-right" href="login_login.html">
+							<i class="fa fa-power-off"></i> Log Out
+						</a>
+					</div>
+				</div>
+			</nav>
+			<!-- end: PAGESLIDE LEFT -->
+			
+						
+			
+			<!-- start: MAIN CONTAINER -->
+			<div class="main-container inner">
+				<!-- start: PAGE -->
+							
+				<div class="main-content">
+										
+					<div class="container">
+						<!-- start: PAGE HEADER -->
+						<!-- start: TOOLBAR -->
+						<div class="toolbar row">
+							<div class="col-sm-6 hidden-xs">
+								<div class="page-header">
+									<h1>Historia Clinica<small>Andres gomes</small></h1>
+								</div>
+							</div>
+							
+							<div class="col-sm-6 col-xs-12">
+								
+								<div class="toolbar-tools pull-right">
+									<!-- start: TOP NAVIGATION MENU -->
+									
+									<ul class="nav navbar-right">
+										<!-- start: TO-DO DROPDOWN -->
+										<li class="dropdown">
+											<a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#">
+												<i class="fa fa-plus"></i> Nuevo Paciente
+												
+											</a>
+											<ul class="dropdown-menu dropdown-light dropdown-subview">
+												<li class="dropdown-header">
+													Notes
+												</li>
+												<li>
+													<a href="{% url 'paciente:paciente_crear' %}" class="new-note"><span class="fa-stack"> <i class="fa fa-file-text-o fa-stack-1x fa-lg"></i> <i class="fa fa-plus fa-stack-1x stack-right-bottom text-danger"></i> </span> Add new note</a>
+												</li>
+												
+											</ul>
+										</li>
+										
+										<li class="menu-search">
+											<a href="#">
+												<i class="fa fa-search"></i> SEARCH
+											</a>
+											<!-- start: SEARCH POPOVER -->
+											<div class="popover bottom search-box transition-all">
+												<div class="arrow"></div>
+												<div class="popover-content">
+													<!-- start: SEARCH FORM -->
+													<form class="" id="searchform" action="#">
+														<div class="input-group">
+															<input type="text" class="form-control" placeholder="Search">
+															<span class="input-group-btn">
+																<button class="btn btn-main-color btn-squared" type="button">
+																	<i class="fa fa-search"></i>
+																</button> </span>
+														</div>
+													</form>
+													
+													<!-- end: SEARCH FORM -->
+												</div>
+											</div>
+											<!-- end: SEARCH POPOVER -->
+							
+										</li>
+									</ul>
+									<!-- end: TOP NAVIGATION MENU -->
+								
+								</div>
+								
+							</div>
+						
+						</div>
+						<!-- end: TOOLBAR -->
+						<!-- end: PAGE HEADER -->
+						<!-- start: AJAX CONTENT -->
+						<div id="ajax-content" class="animated">
+							<!-- HERE WILL BE LOADED AN AJAX CONTENT -->
+															
+						</div>
+						<div>
+						<!-- end: AJAX CONTENT-->
+						{% block content %}
+											<h4>	Bloque de contenido		</h4>
+								
+							{% endblock %}
+						</div>
+					</div>
+					
+						
+					<div class="subviews">
+						<div class="subviews-container">
+						
+											
+						
+													
+						</div>
+					</div>
+				</div>
+				<!-- end: PAGE -->
+				</div>
+			<!-- end: MAIN CONTAINER -->
+		
+			
+			
+			{% block footer %}
+			<!-- start: FOOTER -->
+			<footer class="inner">
+				<div class="footer-inner">
+					<div class="pull-left">
+						2014 &copy; Rapido by cliptheme.
+					</div>
+					<div class="pull-right">
+						<span class="go-top"><i class="fa fa-chevron-up"></i></span>
+					</div>
+				</div>
+				{% endblock%}
+			</footer>
+			<!-- end: FOOTER -->
+		</div>
+		
+		<!-- start: MAIN JAVASCRIPTS -->
+		<!--[if lt IE 9]>
+		<script src="{% static 'plugins/respond.min.js' %}"></script>
+		<script src="{% static 'plugins/excanvas.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'plugins/jQuery/jquery-1.11.1.min.js' %} "></script>
+		<![endif]-->
+		<!--[if gte IE 9]><!-->
+
+
+
+
+
+		<script src="{% static 'plugins/jQuery/jquery-2.1.1.min.js' %}"></script>
+		<!--<![endif]-->
+		<script src="{% static 'plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js' %}"></script>
+		<script src="{% static 'plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+		<script src="{% static 'plugins/blockUI/jquery.blockUI.js' %}"></script>
+		<script src="{% static 'plugins/iCheck/jquery.icheck.min.js' %}"></script>
+		<script src="{% static 'plugins/moment/min/moment.min.js' %}"></script>
+		<script src="{% static 'plugins/perfect-scrollbar/src/jquery.mousewheel.js' %}"></script>
+		<script src="{% static 'plugins/perfect-scrollbar/src/perfect-scrollbar.js' %}"></script>
+		<script src="{% static 'plugins/bootbox/bootbox.min.js' %}"></script>
+		<script src="{% static 'plugins/jquery.scrollTo/jquery.scrollTo.min.js' %}"></script>
+		<script src="{% static 'plugins/ScrollToFixed/jquery-scrolltofixed-min.js' %}"></script>
+		<script src="{% static 'plugins/jquery.appear/jquery.appear.js' %}"></script>
+		<script src="{% static 'plugins/jquery-cookie/jquery.cookie.js' %}"></script>
+		<script src="{% static 'plugins/velocity/jquery.velocity.min.js' %}"></script>
+		<script src="{% static 'plugins/TouchSwipe/jquery.touchSwipe.min.js' %}"></script>
+		<!-- end: MAIN JAVASCRIPTS -->
+		<!-- start: JAVASCRIPTS REQUIRED FOR SUBVIEW CONTENTS -->
+		<script src="{% static 'plugins/owl-carousel/owl-carousel/owl.carousel.js' %}"></script>
+		<script src="{% static 'plugins/jquery-mockjax/jquery.mockjax.js' %}"></script>
+		<script src="{% static 'plugins/toastr/toastr.js' %}"></script>
+		<script src="{% static 'plugins/bootstrap-modal/js/bootstrap-modal.js' %}"></script>
+		<script src="{% static 'plugins/bootstrap-modal/js/bootstrap-modalmanager.js' %}"></script>
+		<script src="{% static 'plugins/fullcalendar/fullcalendar/fullcalendar.min.js' %}"></script>
+		<script src="{% static 'plugins/bootstrap-switch/dist/js/bootstrap-switch.min.js' %}"></script>
+		<script src="{% static 'plugins/bootstrap-select/bootstrap-select.min.js' %}"></script>
+		<script src="{% static 'plugins/jquery-validation/dist/jquery.validate.min.js' %}"></script>
+		<script src="{% static 'plugins/bootstrap-fileupload/bootstrap-fileupload.min.js' %}"></script>
+		<script src="{% static 'plugins/DataTables/media/js/jquery.dataTables.min.js' %}"></script>
+		<script src="{% static 'plugins/DataTables/media/js/DT_bootstrap.js' %}"></script>
+		<script src="{% static 'plugins/truncate/jquery.truncate.js' %}"></script>
+		<script src="{% static 'plugins/summernote/dist/summernote.min.js' %}"></script>
+		<script src="{% static 'plugins/bootstrap-daterangepicker/daterangepicker.js' %}"></script>
+		<script src="{% static 'js/subview.js' %}"></script>
+		<script src="{% static 'js/subview-examples.js' %}"></script>
+		<!-- end: JAVASCRIPTS REQUIRED FOR SUBVIEW CONTENTS -->
+		<!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+		<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+		<!-- start: CORE JAVASCRIPTS  -->
+		<script src="{% static 'js/main.js' %}"></script>
+		<!-- end: CORE JAVASCRIPTS  -->
+		<script>
+			jQuery(document).ready(function() {
+				Main.init();
+				SVExamples.init();
+			});
+		</script>
+	</body>
+	<!-- end: BODY -->
+</html>

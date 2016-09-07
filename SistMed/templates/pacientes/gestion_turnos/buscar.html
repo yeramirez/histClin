@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block cont_secundario %}
+{% endblock %}
+
+{% block contenido %}
+    <div class='window' style="width:400px;">
+    <div class="win_title_bar">
+        <div class="window_title">
+            <label>Buscar Pacientes</label>
+        </div>
+    </div>
+    <form action="" method="POST" enctype="text/plain">
+    <table>
+        <tbody>
+            <tr>
+                <td><input type='text' name='buscar_text' class='edt_g'></td>
+                <td><input type="submit" name="Buscar" value="Buscar" class='boton'/></td>
+            </tr>
+            <tr>
+                <td colspan='2'>
+                <input type="radio" name="buscar_por" value="0" checked><label>Usuario</label>
+                <input type="radio" name="buscar_por" value="1"><label>Nombre</label>
+                <input type="radio" name="buscar_por" value="2"><label>Apellido</label>
+                </td>
+            </tr>
+            <tr>
+                <td colspan='2' align='center'>
+                <input type="hidden" name="query" value="1"/>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    </form>
+    </div>
+
+
+    {% if query %}
+    <br />
+    <br />
+    <table style="text-align: center;" width="600px" border="0" cellpadding="0" cellspacing="1">
+    <tbody>
+        <tr class='table_title'>
+            <td style='width:100px;'>Usuario</td>
+            <td>Nombre y Apellido</td>
+            <td style='width:70px;'>Ver</td>
+            <td style='width:70px;'>Modificar</td>
+            <td style='width:70px;'>Borrar</td>
+        </tr>
+        {% for pac in listado_pacientes %}
+            <tr class='{{ pac|slice:"3:"|first }}'>
+                <td>{{ pac|slice:"1:"|first }}</td>
+                <td>{{ pac|slice:"2:"|first }}</td>
+                <td style='text-align:center;'><a href='/pacientes/datos/{{ pac|first }}/'><img src='/site_media/imagenes/icon_ver.png'></a></td>
+                <td style='text-align:center;'><a href='/pacientes/modificar/{{ pac|first }}/'><img src='/site_media/imagenes/icon_edit.png'></a></td>
+                <td style='text-align:center;'><a href='/pacientes/borrar/{{ pac|first }}/'><img src='/site_media/imagenes/icon_borrar.png'></a></td>
+            </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+    <br />
+    {% else %}
+        <div class='{{ msj_class }}'>
+        <p>{{ mensaje }} </p>
+        </div>
+    {% endif %}
+    </div>
+
+{% endblock %}
+
+{% block pie_pagina %}
+{% endblock %}

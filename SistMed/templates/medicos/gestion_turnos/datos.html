@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+
+{% block cont_secundario %}
+{% endblock %}
+
+{% block contenido %}
+<!--- botones de accion -->
+
+
+<ul class="tab_list" align="left">
+    <li>Datos Basicos</li>
+    {% if nivel_3 %}
+    <li><a href='/medicos/modificar/{{ med_id }}/' class="tab">Modificar</a></li>
+    <li><a href='/medicos/borrar/{{ med_id }}/' class="tab">Borrar</a></li>
+    {% endif %}
+</ul>
+<!-- detalles -->
+<table style="text-align: left;" border="0" width='400px' cellpadding="2" cellspacing="2">
+    <tbody>
+        {% if nivel_3 %}
+        <tr>
+            <td class='field_b' style='width: 60px;'><label>Usuario:</label></td>
+            <td class='field_a'><label>{{ username }}</label></td>
+        </tr>
+        {% endif %}
+        <tr>
+            <td class='field_b'><label>Nombre:</label></td>
+            <td class='field_a'><label>{{ nombre }}</label></td>
+        </tr>
+
+        {% if nivel_3 %}
+        <tr>
+            <td class='field_b'><label>Documento:</label></td>
+            <td class='field_a'><label>{{ doc }}</label></td>
+        </tr>
+        {% endif %}
+
+        <tr>
+            <td class='field_b'><label>Matricula:</label></td>
+            <td class='field_a'><label>{{ matricula }}</label></td>
+        </tr>
+
+        <tr>
+            <td class='field_b'><label>Direccion:</label></td>
+            <td class='field_a'><label>{{ direccion }}</label></td>
+        </tr>
+
+        <tr>
+            <td class='field_b'><label>Telefono:</label></td>
+            <td class='field_a'><label>{{ telefono }}</label></td>
+        </tr>
+
+        <tr>
+            <td class='field_b'><label>Email:</label></td>
+            <td class='field_a'><label>{{ email }}</label></td>
+        </tr>
+
+        <tr>
+            <td class='field_b'><label>Sexo:</label></td>
+            <td class='field_a'><label>{{ sexo }}</label></td>
+        </tr>
+    </tbody>
+</table>
+
+
+<!-- especialidades -->
+<ul class="tab_list" align="left">
+    <li>Expecialidades</li>
+    {% if nivel_3 %}
+    <li><a href='/medicos/agregar-especialidades/{{ med_id }}/' class="tab">Agregar</a></span></li>
+    {% endif %}
+</ul>
+
+<table style="text-align: left;" border="0" width='400px' cellpadding="2" cellspacing="2">
+<tbody>
+    <!--tr class='table_title'>
+        <td>Especialidades</td>
+    </tr-->
+    {% for esp in especialidades %}
+        <tr class='{{ esp|slice:"1:"|first }}'>
+            <td>{{ esp|slice:"0:"|first }}</td>
+        </tr>
+    {% endfor %}
+
+</tbody>
+</table>
+
+<ul class="tab_list" align="left">
+    <li>Horarios Atencion</li>
+    {% if nivel_3 %}
+    <li><a href='/medicos/horario-atencion/agregar/{{ med_id }}/' class='tab'>Agregar</a></li>
+    {% endif %}
+    <!--li><a href='/medicos/horario-atencion/borrar/{{ med_id }}/' class='tab'>Borrar</a></li-->
+</ul>
+
+<table border="0" width='400px' cellpadding="2" cellspacing="2">
+    <tbody>
+        <tr class='table_title'>
+            <td>Dia</td>
+            <td>Inicio</td>
+            <td>Fin</td>
+        </tr>
+        {% for h in horarios_atencion %}
+            <tr class='{{ h|slice:"0:"|first }}'>
+                <td>{{ h|slice:"1:"|first }}</td>
+                <td>{{ h|slice:"2:"|first }}</td>
+                <td>{{ h|slice:"3:"|first }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
+
+{% block pie_pagina %}
+{% endblock %}

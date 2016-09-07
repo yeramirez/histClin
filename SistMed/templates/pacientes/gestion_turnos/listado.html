@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block cont_secundario %}
+{% endblock %}
+
+{% block contenido %}
+
+
+
+<table style="text-align: center;" width="600px" border="0" cellpadding="0" cellspacing="1">
+    <tbody>
+        <tr class='table_title'>
+            <td style='width:100px;'>Usuario</td>
+            <td>Nombre y Apellido</td>
+            <td style='width:70px;'>Ver</td>
+            <td style='width:70px;'>Modificar</td>
+            <td style='width:70px;'>Borrar</td>
+        </tr>
+        {% for pac in listado_pacientes %}
+            <tr class='{{ pac|slice:"3:"|first }}'>
+                <td>{{ pac|slice:"1:"|first }}</td>
+                <td>{{ pac|slice:"2:"|first }}</td>
+                <td style='text-align:center;'><a href='/pacientes/datos/{{ pac|first }}/'><img src='/site_media/imagenes/icon_ver.png'></a></td>
+                <td style='text-align:center;'><a href='/pacientes/modificar/{{ pac|first }}/'><img src='/site_media/imagenes/icon_edit.png'></a></td>
+                <td style='text-align:center;'><a href='/pacientes/borrar/{{ pac|first }}/'><img src='/site_media/imagenes/icon_borrar.png'></a></td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
+
+{% block pie_pagina %}
+{% endblock %}
