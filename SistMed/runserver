@@ -1,6 +1,0 @@
-#!/bin/sh
-
-#levanta el servidor Django por el puerto 8080
-
-python manage.py runserver 8080
-
