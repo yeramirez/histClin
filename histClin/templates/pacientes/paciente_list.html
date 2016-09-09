@@ -82,9 +82,10 @@
 															<td>{{ paciente.colegio }}</td>
 															<td>{{ paciente.fecha_creacion}}</td>
 															<td>{{ paciente.Medico }}</td>
+                                                                                                                        
+                                                                                                                        
 															<td><a  class="edit-row" href="{% url 'paciente:paciente_editar' paciente.id %}">Editar</a></td>
-															 	
-															 <td><a  class="edit-row" href="{% url 'paciente:paciente_eliminar' paciente.id %}">Eliminar</a></td>
+															<td><a  class="edit-row" href="{% url 'paciente:paciente_eliminar' paciente.id %}">Eliminar</a></td>
 															
 																	
 														</tr>
@@ -105,4 +106,3 @@
 						
 
 {% endblock %}
-

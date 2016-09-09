@@ -17,6 +17,8 @@ class paciente_view(CreateView):
     template_name = 'pacientes/paciente_form.html'
     success_url = reverse_lazy('paciente:paciente_listar')
     
+           
+    
    
 
 class paciente_list(ListView):
@@ -29,6 +31,7 @@ class paciente_edit(UpdateView):
     form_class = PacienteForm
     template_name = 'pacientes/paciente_form.html'
     success_url = reverse_lazy('paciente:paciente_listar')
+    
     
 class paciente_delete(UpdateView):
     model = Paciente

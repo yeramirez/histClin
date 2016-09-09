@@ -21,7 +21,9 @@
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 		<meta content="" name="description" />
 		<meta content="" name="author" />
+                
 		<!-- end: META -->
+                
 		<!-- start: MAIN CSS -->
 		<link href='http://fonts.googleapis.com/css?family=Raleway:400,300,500,600,700,200,100,800' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="{% static 'plugins/bootstrap/css/bootstrap.min.css' %}">
@@ -34,10 +36,10 @@
 		<link rel="stylesheet" href="{% static 'plugins/owl-carousel/owl-carousel/owl.carousel.css' %}">
 		<link rel="stylesheet" href="{% static 'plugins/owl-carousel/owl-carousel/owl.theme.css' %}">
 		<link rel="stylesheet" href="{% static 'plugins/owl-carousel/owl-carousel/owl.transitions.css' %}">
-		<link rel="stylesheet" href="{% static 'plugins/summernote/dist/summernote.css'">
+		<link rel="stylesheet" href="{% static 'plugins/summernote/dist/summernote.css' %}">
 		<link rel="stylesheet" href="{% static 'plugins/fullcalendar/fullcalendar/fullcalendar.css' %}">
-		<link rel="stylesheet" href="{% static 'plugins/toastr/toastr.min.css'">
-		<link rel="stylesheet" href="{% static 'plugins/bootstrap-select/bootstrap-select.min.css'">
+		<link rel="stylesheet" href="{% static 'plugins/toastr/toastr.min.css' %}">
+		<link rel="stylesheet" href="{% static 'plugins/bootstrap-select/bootstrap-select.min.css' %}">
 		<link rel="stylesheet" href="{% static 'plugins/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.min.css' %}">
 		<link rel="stylesheet" href="{% static 'plugins/DataTables/media/css/DT_bootstrap.css' %}">
 		<link rel="stylesheet" href="{% static 'plugins/bootstrap-fileupload/bootstrap-fileupload.min.css' %}">
@@ -82,7 +84,7 @@
 							<!-- start: USER DROPDOWN -->
 							<li class="dropdown current-user">
 								<a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#">
-									<img src="{% static 'images/avatar-1-small.jpg' %}" class="img-circle" alt=""> <span class="username hidden-xs">Peter Clark</span> <i class="fa fa-caret-down "></i>
+									<img src="{% static 'images/avatar-1-small.jpg' %}" class="img-circle" alt=""> <span class="username hidden-xs">Andres Gomez</span> <i class="fa fa-caret-down "></i>
 								</a>
 								<ul class="dropdown-menu dropdown-dark">
 										<a href="login_login.html">
@@ -115,8 +117,8 @@
 								<img src="{% static 'images/avatar-1.jpg' %}" alt="">
 							</div>
 							<div class="inline-block">
-								<h5 class="no-margin"> Welcome </h5>
-								<h4 class="no-margin"> Peter Clark </h4>
+								<h5 class="no-margin"> Bienvenido </h5>
+								<h4 class="no-margin"> Andres Gomez </h4>
 								<a class="btn user-options sb_toggle">
 									<i class="fa fa-cog"></i>
 								</a>
@@ -127,19 +129,19 @@
 						<!-- start: MAIN NAVIGATION MENU -->
 						<ul class="main-navigation-menu">
 							<li class="start">
-								<a href="layouts_single_content_0.html"><i class="fa fa-home"></i> <span class="title"> Dashboard </span><span class="label label-default pull-right ">LABEL</span> </a>
+								<a href="{% url 'paciente:paciente_crear' %}"><i class="fa fa-home"></i> <span class="title"> Dashboard </span> </a>
 							</li>
 							
 							<li>
-								<a href="javascript:void(0)"><i class="fa fa-th-large"></i> <span class="title"> Historias Clinicas </span><i class="icon-arrow"></i> </a>
+								<a href="#"><i class="fa fa-th-large"></i> <span class="title"> Historias Clinicas </span><i class="icon-arrow"></i> </a>
 								<ul class="sub-menu">
 									<li>
-										<a href="layouts_single_content_1.html">
+										<a href="{% url 'paciente:paciente_crear' %}">
 											<span class="title">Ajax Sample Page 1</span>
 										</a>
 									</li>
 									<li>
-										<a href="layouts_single_content_2.html">
+										<a href="{% url 'paciente:paciente_listar' %}">
 											<span class="title">Ajax Sample Page 2</span>
 										</a>
 									</li>
@@ -221,7 +223,7 @@
 										
 										<li class="menu-search">
 											<a href="#">
-												<i class="fa fa-search"></i> SEARCH
+												<i class="fa fa-search"></i> Buscar
 											</a>
 											<!-- start: SEARCH POPOVER -->
 											<div class="popover bottom search-box transition-all">
@@ -265,6 +267,7 @@
 											<h4>	Bloque de contenido		</h4>
 								
 							{% endblock %}
+                                                {% load debug_tags %}
 						</div>
 					</div>
 					
@@ -321,7 +324,7 @@
 		<script src="{% static 'plugins/moment/min/moment.min.js' %}"></script>
 		<script src="{% static 'plugins/perfect-scrollbar/src/jquery.mousewheel.js' %}"></script>
 		<script src="{% static 'plugins/perfect-scrollbar/src/perfect-scrollbar.js' %}"></script>
-		<script src="{% static 'plugins/bootbox/bootbox.min.js' %}"></script>
+		<script src="{% static 'plugins/bootbox/bootbox.js' %}"></script>
 		<script src="{% static 'plugins/jquery.scrollTo/jquery.scrollTo.min.js' %}"></script>
 		<script src="{% static 'plugins/ScrollToFixed/jquery-scrolltofixed-min.js' %}"></script>
 		<script src="{% static 'plugins/jquery.appear/jquery.appear.js' %}"></script>
@@ -348,7 +351,9 @@
 		<script src="{% static 'js/subview.js' %}"></script>
 		<script src="{% static 'js/subview-examples.js' %}"></script>
 		<!-- end: JAVASCRIPTS REQUIRED FOR SUBVIEW CONTENTS -->
-		<!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+              <!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+                <script src="{% static 'plugins/jQuery-Smart-Wizard/js/jquery.smartWizard.js' %}"></script>
+		<script src="{% static 'js/form-wizard.js' %}"></script>   
 		<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 		<!-- start: CORE JAVASCRIPTS  -->
 		<script src="{% static 'js/main.js' %}"></script>
@@ -356,9 +361,14 @@
 		<script>
 			jQuery(document).ready(function() {
 				Main.init();
-				SVExamples.init();
+                                FormWizard.init();
 			});
 		</script>
+               
+                {{ form.media }}
+	{% block extrajs %}
+	{% endblock %}
 	</body>
 	<!-- end: BODY -->
+         
 </html>

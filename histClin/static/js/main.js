@@ -611,7 +611,7 @@ var Main = function() {"use strict";
 			loadPage(url, element);
 		}
 		function loadPage(url, element) {
-			$.ajax({
+			/*$.ajax({
 				type: "GET",
 				cache: false,
 				url: url,
@@ -627,7 +627,7 @@ var Main = function() {"use strict";
 					element.html('<h4>Could not load the requested content.</h4>').addClass("shake");
 
 				}
-			});
+			});*/
 		};
 	};
 	// function to initiate owlCarousel
