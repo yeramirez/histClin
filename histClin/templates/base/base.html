@@ -10,7 +10,7 @@
 	<!-- start: HEAD -->
 	<head>
 	{% block extrastatic %}	
-	{% endblock %}
+            {% endblock %}
 	
 		<title>Historia Clinica</title>
 		<!-- start: META -->
@@ -31,38 +31,56 @@
 		<link rel="stylesheet" href="{% static 'plugins/iCheck/skins/all.css' %}">
 		<link rel="stylesheet" href="{% static 'plugins/perfect-scrollbar/src/perfect-scrollbar.css' %}">
 		<link rel="stylesheet" href="{% static 'plugins/animate.css/animate.min.css' %}">
-		<!-- end: MAIN CSS -->
-		<!-- start: CSS REQUIRED FOR SUBVIEW CONTENTS -->
-		<link rel="stylesheet" href="{% static 'plugins/owl-carousel/owl-carousel/owl.carousel.css' %}">
-		<link rel="stylesheet" href="{% static 'plugins/owl-carousel/owl-carousel/owl.theme.css' %}">
-		<link rel="stylesheet" href="{% static 'plugins/owl-carousel/owl-carousel/owl.transitions.css' %}">
-		<link rel="stylesheet" href="{% static 'plugins/summernote/dist/summernote.css' %}">
-		<link rel="stylesheet" href="{% static 'plugins/fullcalendar/fullcalendar/fullcalendar.css' %}">
-		<link rel="stylesheet" href="{% static 'plugins/toastr/toastr.min.css' %}">
-		<link rel="stylesheet" href="{% static 'plugins/bootstrap-select/bootstrap-select.min.css' %}">
-		<link rel="stylesheet" href="{% static 'plugins/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.min.css' %}">
-		<link rel="stylesheet" href="{% static 'plugins/DataTables/media/css/DT_bootstrap.css' %}">
-		<link rel="stylesheet" href="{% static 'plugins/bootstrap-fileupload/bootstrap-fileupload.min.css' %}">
-		<link rel="stylesheet" href="{% static 'plugins/bootstrap-daterangepicker/daterangepicker-bs3.css' %}">
-		<!-- end: CSS REQUIRED FOR THIS SUBVIEW CONTENTS-->
-		<!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
-		<link rel="stylesheet" href="{% static 'plugins/bootstrap-social-buttons/bootstrap-social.css' %}">
-		<!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
+		<!-- end: MAIN CSS -->               
 		<!-- start: CORE CSS -->
-		<link rel="stylesheet" href="{% static 'css/styles.css' %}">
-		<link rel="stylesheet" href="{% static 'css/styles-responsive.css' %}">
-		<link rel="stylesheet" href="{% static 'css/plugins.css' %}">
-		<link rel="stylesheet" href="{% static 'css/themes/theme-default.css' %}" type="text/css" id="skin_color">
-		<link rel="stylesheet" href="{% static 'css/print.css' %}" type="text/css" media="print"/>
+		<link rel="stylesheet" href="{% static 'css/styles.css'%}">
+		<link rel="stylesheet" href="{% static 'css/styles-responsive.css'%}">
+		<link rel="stylesheet" href="{% static 'css/plugins.css'%}">
+		<link rel="stylesheet" href="{% static 'css/themes/theme-default.css'%}" type="text/css" id="skin_color">
+		<link rel="stylesheet" href="{% static 'css/print.css'%}" type="text/css" media="print"/>
 		<!-- end: CORE CSS -->
 		<link rel="shortcut icon" href="{% static favicon.ico %}" />
-	</head>
+                
+                <!-- start: MAIN JAVASCRIPTS -->
+		<!--[if lt IE 9]>
+		<script src="{% static 'plugins/respond.min.js'%}"></script>
+		<script src="{% static 'plugins/excanvas.min.js'%}"></script>
+		<script type="text/javascript" src="{% static 'plugins/jQuery/jquery-1.11.1.min.js'%}"></script>
+		<![endif]-->
+		<!--[if gte IE 9]><!-->
+		
+        </head>
 
 
 <!-- end: HEAD -->
 	<!-- start: BODY -->
-	<body class="single-page">
-	<div class="main-wrapper">
+	<!-- start: BODY -->
+	<body>
+		<!-- start: SLIDING BAR (SB) -->
+		<div id="slidingbar-area">
+			<div id="slidingbar">
+				<div class="row">
+					<!-- start: SLIDING BAR FIRST COLUMN -->
+					
+					<!-- end: SLIDING BAR FIRST COLUMN -->
+					<!-- start: SLIDING BAR SECOND COLUMN -->
+									<!-- end: SLIDING BAR SECOND COLUMN -->
+					<!-- start: SLIDING BAR THIRD COLUMN -->
+					
+					<!-- end: SLIDING BAR THIRD COLUMN -->
+				</div>
+				<div class="row">
+					<!-- start: SLIDING BAR TOGGLE BUTTON -->
+					<div class="col-md-12 text-center">
+						<a href="#" class="sb_toggle"><i class="fa fa-chevron-up"></i></a>
+					</div>
+					<!-- end: SLIDING BAR TOGGLE BUTTON -->
+				</div>
+			</div>
+		</div>
+		<!-- end
+                : SLIDING BAR -->
+		<div class="main-wrapper">
 			<!-- start: TOPBAR -->
 			<header class="topbar navbar navbar-inverse navbar-fixed-top inner">
 				<!-- start: TOPBAR CONTAINER -->
@@ -76,7 +94,6 @@
 							<img src="{% static 'images/logo.png' %}" alt="Rapido"/>
 						</a>
 						<!-- end: LOGO -->
-						
 					</div>
 					<div class="topbar-tools">
 						<!-- start: TOP NAVIGATION MENU -->
@@ -84,16 +101,19 @@
 							<!-- start: USER DROPDOWN -->
 							<li class="dropdown current-user">
 								<a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#">
-									<img src="{% static 'images/avatar-1-small.jpg' %}" class="img-circle" alt=""> <span class="username hidden-xs">Andres Gomez</span> <i class="fa fa-caret-down "></i>
+									<img src="{% static 'images/avatar-1-small.jpg' %}" class="img-circle" alt=""> <span class="username hidden-xs">Peter Clark</span> <i class="fa fa-caret-down "></i>
 								</a>
 								<ul class="dropdown-menu dropdown-dark">
+								
+									<li>
 										<a href="login_login.html">
 											Log Out
 										</a>
 									</li>
 								</ul>
 							</li>
-							<!-- end: USER DROPDOWN -->							
+							<!-- end: USER DROPDOWN -->
+							
 						</ul>
 						<!-- end: TOP NAVIGATION MENU -->
 					</div>
@@ -118,51 +138,44 @@
 							</div>
 							<div class="inline-block">
 								<h5 class="no-margin"> Bienvenido </h5>
-								<h4 class="no-margin"> Andres Gomez </h4>
+                                                                <h4 class="no-margin"> Andres Gomez </h4>
 								<a class="btn user-options sb_toggle">
 									<i class="fa fa-cog"></i>
 								</a>
 							</div>
 						</div>
-						{% block navbar %}
-						
+                                            
+                                            
 						<!-- start: MAIN NAVIGATION MENU -->
 						<ul class="main-navigation-menu">
-							<li class="start">
-								<a href="{% url 'paciente:paciente_crear' %}"><i class="fa fa-home"></i> <span class="title"> Dashboard </span> </a>
-							</li>
-							
+							<li class="active open">
+								<a href=""><i class="fa fa-home"></i> <span class="title"> Inicio </span><span class="label label-default pull-right ">LABEL</span> </a>
+							</li> 
 							<li>
-								<a href="#"><i class="fa fa-th-large"></i> <span class="title"> Historias Clinicas </span><i class="icon-arrow"></i> </a>
+								<a href="javascript:void(0)"><i class="fa fa-desktop"></i> <span class="title"> Historia Clinica </span><i class="icon-arrow"></i> </a>
 								<ul class="sub-menu">
+				
 									<li>
 										<a href="{% url 'paciente:paciente_crear' %}">
-											<span class="title">Ajax Sample Page 1</span>
+											<span class="title"> Crear Paciente  </span>
 										</a>
 									</li>
 									<li>
 										<a href="{% url 'paciente:paciente_listar' %}">
-											<span class="title">Ajax Sample Page 2</span>
+											<span class="title"> Listar Pacientes </span>
 										</a>
 									</li>
-									<li>
-										<a href="layouts_single_content_3.html">
-											<span class="title">Ajax Sample Page 3</span>
-										</a>
-									</li>
+									
 								</ul>
 							</li>
+							
 						</ul>
 						<!-- end: MAIN NAVIGATION MENU -->
-						
-						
-						
-						
-						<!-- end: MAIN NAVIGATION MENU -->
+                                                
+                                                
+                                                
+                                                
 					</div>
-					
-						{% endblock %}
-					
 					<!-- end: SIDEBAR -->
 				</div>
 				<div class="slide-tools">
@@ -179,110 +192,39 @@
 				</div>
 			</nav>
 			<!-- end: PAGESLIDE LEFT -->
-			
+                        
+			<!-- start: PAGESLIDE RIGHT -->
+			<!-- end: PAGESLIDE RIGHT -->
 						
-			
 			<!-- start: MAIN CONTAINER -->
 			<div class="main-container inner">
 				<!-- start: PAGE -->
-							
 				<div class="main-content">
-										
-					<div class="container">
+                                    
+                                   <div class="container">
 						<!-- start: PAGE HEADER -->
 						<!-- start: TOOLBAR -->
 						<div class="toolbar row">
 							<div class="col-sm-6 hidden-xs">
 								<div class="page-header">
-									<h1>Historia Clinica<small>Andres gomes</small></h1>
+									<h1>Historia Clinica <small>Andres Gomez </small></h1>
 								</div>
 							</div>
 							
-							<div class="col-sm-6 col-xs-12">
+						</div>	
+                                                                   
+                                                
+						<!-- start: PAGE CONTENT --> 
+                                    {% block content %}
+                                    {% endblock %}
 								
-								<div class="toolbar-tools pull-right">
-									<!-- start: TOP NAVIGATION MENU -->
-									
-									<ul class="nav navbar-right">
-										<!-- start: TO-DO DROPDOWN -->
-										<li class="dropdown">
-											<a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#">
-												<i class="fa fa-plus"></i> Nuevo Paciente
-												
-											</a>
-											<ul class="dropdown-menu dropdown-light dropdown-subview">
-												<li class="dropdown-header">
-													Notes
-												</li>
-												<li>
-													<a href="{% url 'paciente:paciente_crear' %}" class="new-note"><span class="fa-stack"> <i class="fa fa-file-text-o fa-stack-1x fa-lg"></i> <i class="fa fa-plus fa-stack-1x stack-right-bottom text-danger"></i> </span> Add new note</a>
-												</li>
-												
-											</ul>
-										</li>
-										
-										<li class="menu-search">
-											<a href="#">
-												<i class="fa fa-search"></i> Buscar
-											</a>
-											<!-- start: SEARCH POPOVER -->
-											<div class="popover bottom search-box transition-all">
-												<div class="arrow"></div>
-												<div class="popover-content">
-													<!-- start: SEARCH FORM -->
-													<form class="" id="searchform" action="#">
-														<div class="input-group">
-															<input type="text" class="form-control" placeholder="Search">
-															<span class="input-group-btn">
-																<button class="btn btn-main-color btn-squared" type="button">
-																	<i class="fa fa-search"></i>
-																</button> </span>
-														</div>
-													</form>
-													
-													<!-- end: SEARCH FORM -->
-												</div>
-											</div>
-											<!-- end: SEARCH POPOVER -->
-							
-										</li>
-									</ul>
-									<!-- end: TOP NAVIGATION MENU -->
-								
-								</div>
-								
-							</div>
-						
-						</div>
-						<!-- end: TOOLBAR -->
-						<!-- end: PAGE HEADER -->
-						<!-- start: AJAX CONTENT -->
-						<div id="ajax-content" class="animated">
-							<!-- HERE WILL BE LOADED AN AJAX CONTENT -->
-															
-						</div>
-						<div>
-						<!-- end: AJAX CONTENT-->
-						{% block content %}
-											<h4>	Bloque de contenido		</h4>
-								
-							{% endblock %}
-                                                {% load debug_tags %}
-						</div>
-					</div>
-					
-						
-					<div class="subviews">
-						<div class="subviews-container">
-						
-											
-						
-													
-						</div>
-					</div>
+				
+                                                
+                                                
+			</div>					
 				</div>
 				<!-- end: PAGE -->
-				</div>
+			</div>
 			<!-- end: MAIN CONTAINER -->
 		
 			
@@ -303,18 +245,7 @@
 			<!-- end: FOOTER -->
 		</div>
 		
-		<!-- start: MAIN JAVASCRIPTS -->
-		<!--[if lt IE 9]>
-		<script src="{% static 'plugins/respond.min.js' %}"></script>
-		<script src="{% static 'plugins/excanvas.min.js' %}"></script>
-		<script type="text/javascript" src="{% static 'plugins/jQuery/jquery-1.11.1.min.js' %} "></script>
-		<![endif]-->
-		<!--[if gte IE 9]><!-->
-
-
-
-
-
+		
 		<script src="{% static 'plugins/jQuery/jquery-2.1.1.min.js' %}"></script>
 		<!--<![endif]-->
 		<script src="{% static 'plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js' %}"></script>
@@ -371,4 +302,4 @@
 	</body>
 	<!-- end: BODY -->
          
-</html>
+</html

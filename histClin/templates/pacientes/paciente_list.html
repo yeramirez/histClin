@@ -3,106 +3,110 @@
 
 {% block content %}
 
+<div class="row">
+       <div class="col-md-12">
+               <ol class="breadcrumb">
+                       <li>
+                               <a href="#">
+                                       Inicio
+                               </a>
+                       </li>
+                       <li class="active">
+                               Listar
+                       </li>
+               </ol>
+       </div>
+</div>
 
 <div class="row">
-							<div class="col-md-12">
-								<!-- start: DYNAMIC TABLE PANEL -->
-								<div class="panel panel-white">
-									<div class="panel-heading">
-										<h4 class="panel-title">Editable <span class="text-bold">Table</span></h4>
-										<div class="panel-tools">
-											<div class="dropdown">
-												<a data-toggle="dropdown" class="btn btn-xs dropdown-toggle btn-transparent-grey">
-													<i class="fa fa-cog"></i>
-												</a>
-												<ul class="dropdown-menu dropdown-light pull-right" role="menu">
-													<li>
-														<a class="panel-collapse collapses" href="#"><i class="fa fa-angle-up"></i> <span>Collapse</span> </a>
-													</li>
-													<li>
-														<a class="panel-refresh" href="#">
-															<i class="fa fa-refresh"></i> <span>Refresh</span>
-														</a>
-													</li>
-													<li>
-														<a class="panel-config" href="#panel-config" data-toggle="modal">
-															<i class="fa fa-wrench"></i> <span>Configurations</span>
-														</a>
-													</li>
-													<li>
-														<a class="panel-expand" href="#">
-															<i class="fa fa-expand"></i> <span>Fullscreen</span>
-														</a>
-													</li>
-												</ul>
-											</div>
-											<a class="btn btn-xs btn-link panel-close" href="#">
-												<i class="fa fa-times"></i>
-											</a>
-										</div>
-									</div>
-									<div class="panel-body">
-										<div class="row">
-											<div class="col-md-12 space20">
-												<button class="btn btn-green add-row" >
-													Add New <i class="fa fa-plus"  href="{% url 'paciente:paciente_crear' %}"></i>
-												</button>
-											</div>
-										</div>
-										<div class="table-responsive">
-											<table class="table table-striped table-hover" id="sample_2">
-												<thead>
-													<tr>
-														<td>id</td>
-														<td>Nombre</td>
-														<td>Apellidos</td>
-														<td>Sexo</td>
-														<td>Edad</td>
-														<td>Telefono</td>
-														<td>Direccion</td>
-														<td>Colegio</td>
-														<td>Fecha Creaciòn</td>
-														<td>Medico</td>
-														<th>Edit</th>
-														<th>Delete</th>
-													</tr>
-												</thead>
-											   	<tbody>
-											   	
-											   	{% if object_list %}
-   												{% for paciente in object_list %}
-   		 												<tr>
-															<td>{{ paciente.id }}</td>
-															<td>{{ paciente.nombre}}</td>
-															<td>{{ paciente.apellidos }}</td>
-															<td>{{ paciente.sexo }}</td>
-															<td>{{ paciente.edad }}</td>
-															<td>{{ paciente.telefono }}</td>
-															<td>{{ paciente.domicilio }}</td>
-															<td>{{ paciente.colegio }}</td>
-															<td>{{ paciente.fecha_creacion}}</td>
-															<td>{{ paciente.Medico }}</td>
-                                                                                                                        
-                                                                                                                        
-															<td><a  class="edit-row" href="{% url 'paciente:paciente_editar' paciente.id %}">Editar</a></td>
-															<td><a  class="edit-row" href="{% url 'paciente:paciente_eliminar' paciente.id %}">Eliminar</a></td>
-															
-																	
-														</tr>
-														{% endfor %}
-														
-														{% else %}
-														<h1> No hay registros de pacientes</h1>
-														{% endif %}
-													</tr>
-												</tbody>
-											</table>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						
+        <div class="col-md-12">
+                <!-- start: DYNAMIC TABLE PANEL -->
+                <div class="panel panel-white">
+                        <div class="panel-heading">
+                                <h4 class="panel-title">Editar <span class="text-bold">Paciente</span></h4>
+                                <div class="panel-tools">
+                                        <div class="dropdown">
+                                                <a data-toggle="dropdown" class="btn btn-xs dropdown-toggle btn-transparent-grey">
+                                                        <i class="fa fa-cog"></i>
+                                                </a>
+                                                <ul class="dropdown-menu dropdown-light pull-right" role="menu">
+                                                        
+                                                       
+                                                        <li>
+                                                                <a class="panel-expand" href="#">
+                                                                        <i class="fa fa-expand"></i> <span>Fullscreen</span>
+                                                                </a>
+                                                        </li>
+                                                </ul>
+                                        </div>
+                                        <a class="btn btn-xs btn-link panel-close" href="#">
+                                                <i class="fa fa-times"></i>
+                                        </a>
+                                </div>
+                        </div>
+                        <div class="panel-body">
+                                <div class="row">
+                                        <div class="col-md-12 space20">
+                                            <button class="btn btn-green add-row " href="{% url 'paciente:paciente_crear' %}" > 
+                                                        Nuevo <i class="fa fa-plus" ></i>
+                                                         
+                                                </button>
+                                        </div>
+                                </div>
+                                <div class="table-responsive">
+                                        <table class="table table-striped table-hover" id="sample_2">
+                                                <thead>
+                                                        <tr>
+                                                                <td>id</td>
+                                                                <td>Nombre</td>
+                                                                <td>Apellidos</td>
+                                                                <td>Sexo</td>
+                                                                <td>Edad</td>
+                                                                <td>Telefono</td>
+                                                                <td>Direccion</td>
+                                                                <td>Colegio</td>
+                                                                <td>Fecha Creaciòn</td>
+                                                                <td>Medico</td>
+                                                                <th>Edit</th>
+                                                                <th>Delete</th>
+                                                        </tr>
+                                                </thead>
+                                                <tbody>
+
+                                                {% if object_list %}
+                                                {% for paciente in object_list %}
+                                                                <tr>
+                                                                        <td>{{ paciente.id }}</td>
+                                                                        <td>{{ paciente.nombre}}</td>
+                                                                        <td>{{ paciente.apellidos }}</td>
+                                                                        <td>{{ paciente.sexo }}</td>
+                                                                        <td>{{ paciente.edad }}</td>
+                                                                        <td>{{ paciente.telefono }}</td>
+                                                                        <td>{{ paciente.domicilio }}</td>
+                                                                        <td>{{ paciente.colegio }}</td>
+                                                                        <td>{{ paciente.fecha_creacion}}</td>
+                                                                        <td>{{ paciente.Medico }}</td>
+
+
+                                                                        <td><a  class="edit-row" href="{% url 'paciente:paciente_editar' paciente.id %}">Editar</a></td>
+                                                                        <td><a  class="edit-row" href="{% url 'paciente:paciente_eliminar' paciente.id %}">Eliminar</a></td>
+
+
+                                                                </tr>
+                                                                {% endfor %}
+
+                                                                {% else %}
+                                                                <h1> No hay registros de pacientes</h1>
+                                                                {% endif %}
+                                                        </tr>
+                                                </tbody>
+                                        </table>
+                                </div>
+                        </div>
+                </div>
+        </div>
+</div>
+
 						
 
 {% endblock %}
