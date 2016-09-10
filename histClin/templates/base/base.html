@@ -4,10 +4,12 @@
 <!-- Template Name: Rapido - Responsive Admin Template build with Twitter Bootstrap 3.x Version: 1.0 Author: ClipTheme -->
 <!--[if IE 8]><html class="ie8" lang="en"><![endif]-->
 <!--[if IE 9]><html class="ie9" lang="en"><![endif]-->
+
 <!--[if !IE]><!-->
 <html lang="es">
 	<!--<![endif]-->
 	<!-- start: HEAD -->
+  
 	<head>
 	{% block extrastatic %}	
             {% endblock %}
@@ -40,6 +42,7 @@
 		<link rel="stylesheet" href="{% static 'css/print.css'%}" type="text/css" media="print"/>
 		<!-- end: CORE CSS -->
 		<link rel="shortcut icon" href="{% static favicon.ico %}" />
+                <script src="{% static 'js/imc.js' %}"></script>
                 
                 <!-- start: MAIN JAVASCRIPTS -->
 		<!--[if lt IE 9]>
@@ -48,6 +51,7 @@
 		<script type="text/javascript" src="{% static 'plugins/jQuery/jquery-1.11.1.min.js'%}"></script>
 		<![endif]-->
 		<!--[if gte IE 9]><!-->
+
 		
         </head>
 
@@ -292,7 +296,9 @@
 		<script>
 			jQuery(document).ready(function() {
 				Main.init();
+                                
                                 FormWizard.init();
+                                
 			});
 		</script>
                

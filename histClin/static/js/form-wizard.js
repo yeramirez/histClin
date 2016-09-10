@@ -1,3 +1,6 @@
+
+
+
 var FormWizard = function () {
 	"use strict";
     var wizardContent = $('#wizard');
@@ -198,6 +201,8 @@ var FormWizard = function () {
             return true;
         } 
     };
+    
+    
     var validateAllSteps = function () {
         var isStepValid = true;
         // all step validation logic
@@ -207,6 +212,9 @@ var FormWizard = function () {
         init: function () {
             initWizard();
             validateCheckRadio();
+           
         }
     };
 }();
+
+
