@@ -12,17 +12,21 @@ function constructor()
 
 function Imc()
  {
-                 var num1=parseInt($('#id_talla').val());
-                 var num2=parseInt($('#id_peso').val());
-                 if(isNaN(num1))
+                 var talla=parseFloat($('#id_talla').val());
+                 var peso=parseInt($('#id_peso').val());
+                 if(isNaN(talla))
                  {
-                     num1=0;
+                     talla=0;
                  }
-                 if(isNaN(num2))
+                 if(isNaN(peso))
                  {
-                     num2=0;
+                     peso=0;
                  }
-                 var resul=Math.pow((num2/num1),2);
+                 
+                  talla=Math.pow(talla, 2)
+                 
+                 
+                 var resul=peso/talla;
                  
                  
                  $('#id_imc').val(Math.round(resul*100)/100);                

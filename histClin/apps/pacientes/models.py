@@ -34,11 +34,11 @@ class Paciente(models.Model):
         fc = models.IntegerField()
         fr = models.IntegerField()                
         pc = models.IntegerField()
-        talla = models.IntegerField()
+        talla = models.FloatField()
         peso = models.IntegerField()
         pa = models.IntegerField()
         #este campo se le debe asignar peso dividido altura elevado a la 2 
-        imc = models.IntegerField()
+        imc = models.FloatField()
         av = models.IntegerField()
         cabeza_cuello = models.CharField(max_length=100)
         cardio_pulmonar = models.CharField(max_length=100)
