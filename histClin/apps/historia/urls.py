@@ -1,9 +1,8 @@
 from django.conf.urls import url, include
-from apps.pacientes.views import index, paciente_view, paciente_list,paciente_edit,paciente_delete
+from apps.historia.views import index, historia_view, historia_list
 urlpatterns = [
     url(r'^$', index, name='index'),
-    url(r'^nuevo$', paciente_view.as_view(), name='paciente_crear'),
-    url(r'^listar$', paciente_list.as_view(), name='paciente_listar'),
-    url(r'^editar/(?P<pk>\d+)/$', paciente_edit.as_view(), name='paciente_editar'),
-    url(r'^eliminar/(?P<pk>\d+)/$', paciente_delete.as_view(), name='paciente_eliminar'),
+    url(r'^nuevo$', historia_view.as_view(), name='historia_crear'),
+    url(r'^listar$', historia_list.as_view(), name='historia_listar'),
+    
 ]

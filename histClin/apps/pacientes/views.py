@@ -10,15 +10,13 @@ from django.core.urlresolvers import reverse_lazy
 def index(request):
     return render(request, 'paciente/index.html')
 
-
+#---------------------------------Vistar para crear editar y borrar pacientes  
+    
 class paciente_view(CreateView):
     model = Paciente
     form_class = PacienteForm
     template_name = 'pacientes/paciente_form.html'
     success_url = reverse_lazy('paciente:paciente_listar')
-    
-           
-    
    
 
 class paciente_list(ListView):

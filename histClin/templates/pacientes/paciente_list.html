@@ -65,7 +65,6 @@
                                                                 <td>Telefono</td>
                                                                 <td>Direccion</td>
                                                                 <td>Colegio</td>
-                                                                <td>Fecha Creaciòn</td>
                                                                 <td>Medico</td>
                                                                 <th>Edit</th>
                                                                 <th>Delete</th>
@@ -84,12 +83,11 @@
                                                                         <td>{{ paciente.telefono }}</td>
                                                                         <td>{{ paciente.domicilio }}</td>
                                                                         <td>{{ paciente.colegio }}</td>
-                                                                        <td>{{ paciente.fecha_creacion}}</td>
                                                                         <td>{{ paciente.Medico }}</td>
 
 
-                                                                        <td><a  class="edit-row" href="{% url 'paciente:paciente_editar' paciente.id %}">Editar</a></td>
-                                                                        <td><a  class="edit-row" href="{% url 'paciente:paciente_eliminar' paciente.id %}">Eliminar</a></td>
+                                                                        <td><a  class="edit-row" href="{% url 'paciente:paciente_editar' paciente.Doc_id %}">Editar</a></td>
+                                                                        <td><a  class="edit-row" href="{% url 'paciente:paciente_eliminar' paciente.Doc_id %}">Eliminar</a></td>
 
 
                                                                 </tr>

@@ -74,6 +74,7 @@
                                                                </a>
                                                        </li>
                                                        <li>
+                                         
                                                                <a href="#step-2">
                                                                        <div class="stepNumber">
                                                                                2
@@ -83,26 +84,7 @@
                                                                                <small>Informaciòn Acudiente</small> </span>
                                                                </a>
                                                        </li>
-                                                       <li>
-                                                               <a href="#step-3">
-                                                                       <div class="stepNumber">
-                                                                               3
-                                                                       </div>
-                                                                       <span class="stepDesc"> Paso 3
-                                                                               <br />
-                                                                               <small>Observaciones y Antecedentes</small> </span>
-                                                               </a>
-                                                       </li>
-                                                       <li>
-                                                               <a href="#step-4">
-                                                                       <div class="stepNumber">
-                                                                               4
-                                                                       </div>
-                                                                       <span class="stepDesc"> Paso 4
-                                                                               <br />
-                                                                               <small>Examenes y observaciones</small> </span>
-                                                               </a>
-                                                       </li>
+                                                      
                                                </ul>
                                                <div class="progress progress-xs transparent-black no-radius active">
                                                        <div aria-valuemax="100" aria-valuemin="0" role="progressbar" class="progress-bar partition-green step-bar">
@@ -147,7 +129,7 @@
                                                                       Documento <span class="symbol required"></span>
                                                                </label>
                                                                <div class="col-xs-1">
-                                                                       {{form.Doc}}
+                                                                       {{form.Doc_id}}
                                                                </div>
                                                                
                                                            </div>
@@ -164,14 +146,14 @@
                                                        
                                                         <div class="form-group">
 
-                                                               <label class="col-sm-2 control-label" for="id_sexo">
+                                                               <label class="col-sm-2 control-label" for="id_colegio">
                                                                            Colegio <span class="symbol required"></span>
                                                                    </label>
                                                                <div class="row">
                                                                    <div class="col-xs-4">
                                                                            {{form.colegio}}
                                                                    </div>
-                                                                   <label class="col-sm-2 control-label" for="id_fr">
+                                                                   <label class="col-sm-2 control-label" for="id_grado">
                                                                           Grado <span class="symbol required"></span>
                                                                    </label>
                                                                    <div class="col-xs-1">
@@ -184,6 +166,9 @@
                                                                                                      
                                               
                                                        <div class="form-group">
+                                                           
+                                                           
+                                                           
                                                                <div class="col-sm-2 col-sm-offset-8">
                                                                        <button class="btn btn-blue next-step btn-block">
                                                                                Next <i class="fa fa-arrow-circle-right"></i>
@@ -193,6 +178,8 @@
   
                                                        
                                                </div>
+                                           
+                                           
                                                <div id="step-2">
                                                        <h2 class="StepTitle">Informaciòn Acudiente</h2>
                                                                                                              
@@ -226,7 +213,7 @@
                                                                </div>
                                                        </div>
                                                     
-                                                             <div class="form-group">
+                                                       <div class="form-group">
                                                                <label class="col-sm-3 control-label" for="id_Medico">
                                                                        Medico de Familia <span class="symbol required"></span>
                                                                </label>
@@ -235,234 +222,7 @@
                                                                </div>
                                                        </div>
  
-                                                       <div class="form-group">
-                                                               <div class="col-sm-2 col-sm-offset-3">
-                                                                       <button class="btn btn-light-grey back-step btn-block">
-                                                                               <i class="fa fa-circle-arrow-left"></i> Back
-                                                                       </button>
-                                                               </div>
-                                                               <div class="col-sm-2 col-sm-offset-3">
-                                                                       <button class="btn btn-blue next-step btn-block">
-                                                                               Next <i class="fa fa-arrow-circle-right"></i>
-                                                                       </button>
-                                                               </div>
-                                                       </div>
-                                               </div>
-                                           
-                                               <div id="step-3">
-                                                       <h2 class="StepTitle">Observaciones y Antecedentes</h2>
-                                                                                                                                                                   
-                                                       <div class="form-group">
-                                                           <label class="col-sm-3 control-label" for="id_observacion_Entorno_familiar">
-                                                                      Observacion y entorno familiar <span class="symbol required"></span>
-                                                               </label>
-                                                               <div class="col-sm-7">
-                                                                       {{form.observacion_Entorno_familiar}}
-                                                               </div>
-                                                       </div>
-                                                       
-                                                       <div class="form-group">
-                                                           <label class="col-sm-3 control-label" for="id_motivo_consulta">
-                                                                       Motivo Consulta <span class="symbol required"></span>
-                                                               </label>
-                                                               <div class="col-sm-7">
-                                                                       {{form.motivo_consulta}}
-                                                               </div>
-                                                       </div>
-                                                       
-                                                        <div class="form-group">
-                                                            <label class="col-sm-3 control-label" for="id_antecedentes_personales">
-                                                                       Antecedentes Personales <span class="symbol required"></span>
-                                                               </label>
-                                                               <div class="col-sm-7">
-                                                                       {{form.antecedentes_personales}}
-                                                               </div>
-                                                       </div>
-                                                       
-                                                       
-                                                       <div class="form-group">
-                                                           <label class="col-sm-3 control-label" for="id_alergicos">
-                                                                       Alergicos <span class="symbol required"></span>
-                                                               </label>
-                                                               <div class="col-sm-7">
-                                                                       {{form.alergicos}}
-                                                               </div>
-                                                       </div>
-                                                       
-                                                       <div class="form-group">
-                                                           <label class="col-sm-3 control-label" for="id_vacuna">
-                                                                       Vacuna <span class="symbol required"></span>
-                                                               </label>
-                                                               <div class="col-sm-7">
-                                                                       {{form.vacuna}}
-                                                               </div>
-                                                       </div>
-                                                       
-                                                      
-                                                       <div class="form-group">
-                                                               <div class="col-sm-2 col-sm-offset-3">
-                                                                       <button class="btn btn-light-grey back-step btn-block">
-                                                                               <i class="fa fa-circle-arrow-left"></i> Back
-                                                                       </button>
-                                                               </div>
-                                                               <div class="col-sm-2 col-sm-offset-3">
-                                                                       <button class="btn btn-blue next-step btn-block">
-                                                                               Next <i class="fa fa-arrow-circle-right"></i>
-                                                                       </button>
-                                                               </div>
-                                                       </div>
-                                               </div>
-                                           
-                                           
-                                           
-                                               <div id="step-4">
-                                                       <h2 class="StepTitle">Examenes y observaciones</h2>
-                                                       
-                                                        <div class="form-group">
-                                                               <label class="col-sm-2 control-label" for="id_examen_fisico">
-                                                                       Examen Fisico <span class="symbol required"></span>
-                                                               </label>
-                                                               <div class="col-sm-7">
-                                                                       {{form.examen_fisico}}
-                                                               </div>
-                                                       </div>
-                                                       
-                                                       <div class="form-group">
-                                                                                                                     
-                                                           <label class="col-sm-2 control-label" for="id_fc">
-                                                                       FC <span class="symbol required"></span>
-                                                               </label>
-                                                           <div class="row">
-                                                               <div class="col-xs-1">
-                                                                       {{form.fc}}
-                                                               </div>
-                                                               <label class="col-sm-2 control-label" for="id_fr">
-                                                                      FR <span class="symbol required"></span>
-                                                               </label>
-                                                               <div class="col-xs-1">
-                                                                       {{form.fr}}
-                                                               </div>
-                                                               <label class="col-sm-2 control-label" for="id_pc">
-                                                                      PC <span class="symbol required"></span>
-                                                               </label>
-                                                               <div class="col-xs-1">
-                                                                       {{form.pc}}
-                                                               </div>
-                                                               
-                                                           </div>
-                                                           
-                                                           
-                                                       </div>
-                                                                                                          
-                                                      <div class="form-group">
-                                                                                                                     
-                                                          <label class="col-sm-2 control-label" for="id_talla">
-                                                                       Talla <span class="symbol required"></span>
-                                                               </label>
-                                                           <div class="row" id="contenido">
-                                                               <div class="col-xs-2">
-                                                                       {{form.talla}}
-                                                               </div>
-                                                               <label class="col-sm-2 control-label" for="id_peso">
-                                                                      Peso <span class="symbol required"></span>
-                                                               </label>
-                                                               <div class="col-xs-2">
-                                                                       {{form.peso}}
-                                                               </div>
-                                                               <label class="col-sm-2 control-label" for="id_imc">
-                                                                      Imc <span class="symbol required"></span>
-                                                               </label>
-                                                               <div class="col-xs-1">
-                                                                       {{form.imc}}
-                                                               </div>
-                                                               
-                                                           </div>
-                                                           
-                                                           
-                                                       </div>
-                                                       <div class="form-group">
-                                                                                                                     
-                                                           <label class="col-sm-2 control-label" for="id_pa">
-                                                                       Pa <span class="symbol required"></span>
-                                                               </label>
-                                                           <div class="row">
-                                                               <div class="col-xs-1">
-                                                                       {{form.pa}}
-                                                               </div>
-                                                               <label class="col-sm-2 control-label" for="id_av">
-                                                                      Av <span class="symbol required"></span>
-                                                               </label>
-                                                               <div class="col-xs-1">
-                                                                       {{form.av}}
-                                                               </div>
-                                                                                                                              
-                                                           </div>
-                                                                                                                      
-                                                       </div>
-                                                       
-                                                       <div class="form-group">
-                                                               <label class="col-sm-2 control-label" for="id_cabeza_cuello">
-                                                                       Cabeza & Cuello <span class="symbol required"></span>
-                                                               </label>
-                                                               <div class="col-sm-7">
-                                                                       {{form.cabeza_cuello}}
-                                                               </div>
-                                                       </div>
-                                                       
-                                                        <div class="form-group">
-                                                               <label class="col-sm-2 control-label" for="id_cardio_pulmonar">
-                                                                       Cardio Pulmonar <span class="symbol required"></span>
-                                                               </label>
-                                                               <div class="col-sm-7">
-                                                                       {{form.cardio_pulmonar}}
-                                                               </div>
-                                                       </div>
-                                                       
-                                                        <div class="form-group">
-                                                               <label class="col-sm-2 control-label" for="id_abdomen">
-                                                                       Abdomen <span class="symbol required"></span>
-                                                               </label>
-                                                               <div class="col-sm-7">
-                                                                       {{form.abdomen}}
-                                                               </div>
-                                                       </div>
-                                                       
-                                                        <div class="form-group">
-                                                               <label class="col-sm-2 control-label" for="id_extremidades">
-                                                                       Extremidades <span class="symbol required"></span>
-                                                               </label>
-                                                               <div class="col-sm-7">
-                                                                       {{form.extremidades}}
-                                                               </div>
-                                                       </div>
-                                                       
-                                                      <div class="form-group">
-                                                          <label class="col-sm-2 control-label" for="id_piel_anexos">
-                                                                       Piel & Anexos <span class="symbol required"></span>
-                                                               </label>
-                                                               <div class="col-sm-7">
-                                                                       {{form.piel_anexos}}
-                                                               </div>
-                                                       </div>
-                                                       
-                                                       
-                                                         <div class="form-group">
-                                                               <label class="col-sm-2 control-label" for="id_observaciones">
-                                                                       Observaciones <span class="symbol required"></span>
-                                                               </label>
-                                                               <div class="col-sm-7">
-                                                                       {{form.observaciones}}
-                                                               </div>
-                                                       </div>
-                                                       
-                                                         <div class="form-group">
-                                                               <label class="col-sm-2 control-label" for="id_fecha_creacion">
-                                                                       Fecha de Creacion <span class="symbol required"></span>
-                                                               </label>
-                                                               <div class="col-sm-7">
-                                                                       {{form.fecha_creacion}}
-                                                               </div>
-                                                       </div>
+                                       
                                                        <div class="form-group">
                                                             <div class="col-sm-2 col-sm-offset-8">
                                                                     <button type="submit" class="btn btn-success">
@@ -470,13 +230,9 @@
                                                                        
                                                                     </button>
                                                             </div>
-                                                         </div>
-                                                      
-                                             
-   
-                                                       
-                                               </div>
-                                       </div>
+                                                       </div>
+                                                </div>
+                                         </div>
                                </form>
                                                       
                        </div>

@@ -24,6 +24,21 @@
 		<meta content="" name="description" />
 		<meta content="" name="author" />
                 
+                <!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
+		
+		
+		
+		
+		<!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
+		<!-- start: CORE CSS -->
+				
+                <link rel="stylesheet" href="{% static 'plugins/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css' %}">
+		<link rel="stylesheet" href="{% static 'plugins/select2/select2.css' %}">
+		<link rel="stylesheet" href="{% static 'plugins/datepicker/css/datepicker.css' %}">
+		<link rel="stylesheet" href="{% static 'plugins/bootstrap-timepicker/css/bootstrap-timepicker.min.css' %}">
+		<link rel="stylesheet" href="{% static 'plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.css' %}">
+		<link rel="stylesheet" href="{% static 'plugins/bootstrap-colorpalette/css/bootstrap-colorpalette.css' %}">
+		<link rel="stylesheet" href="{% static 'plugins/jQuery-Tags-Input/jquery.tagsinput.css' %}">
 		<!-- end: META -->
                 
 		<!-- start: MAIN CSS -->
@@ -105,7 +120,7 @@
 							<!-- start: USER DROPDOWN -->
 							<li class="dropdown current-user">
 								<a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#">
-									<img src="{% static 'images/avatar-1-small.jpg' %}" class="img-circle" alt=""> <span class="username hidden-xs">Peter Clark</span> <i class="fa fa-caret-down "></i>
+									<img src="{% static 'images/avatar-1-small.jpg' %}" class="img-circle" alt=""> <span class="username hidden-xs">Andres Gomez</span> <i class="fa fa-caret-down "></i>
 								</a>
 								<ul class="dropdown-menu dropdown-dark">
 								
@@ -153,7 +168,7 @@
 						<!-- start: MAIN NAVIGATION MENU -->
 						<ul class="main-navigation-menu">
 							<li class="active open">
-								<a href=""><i class="fa fa-home"></i> <span class="title"> Inicio </span><span class="label label-default pull-right ">LABEL</span> </a>
+								<a href="{% url 'paciente:paciente_listar' %}"><i class="fa fa-home"></i> <span class="title"> Inicio </span><span class="label label-default pull-right ">LABEL</span> </a>
 							</li> 
 							<li>
 								<a href="javascript:void(0)"><i class="fa fa-desktop"></i> <span class="title"> Historia Clinica </span><i class="icon-arrow"></i> </a>
@@ -167,6 +182,12 @@
 									<li>
 										<a href="{% url 'paciente:paciente_listar' %}">
 											<span class="title"> Listar Pacientes </span>
+										</a>
+									</li>
+                                                                        
+                                                                        <li>
+										<a href="{% url 'historia:historia_crear' %}">
+											<span class="title"> Crear Nueva Consulta </span>
 										</a>
 									</li>
 									
@@ -286,7 +307,28 @@
 		<script src="{% static 'js/subview.js' %}"></script>
 		<script src="{% static 'js/subview-examples.js' %}"></script>
 		<!-- end: JAVASCRIPTS REQUIRED FOR SUBVIEW CONTENTS -->
+                
+                <script src="{% static 'plugins/jquery-inputlimiter/jquery.inputlimiter.1.3.1.min.js' %}"></script>
+		<script src="{% static 'plugins/autosize/jquery.autosize.min.js' %}"></script>
+		<script src="{% static 'plugins/select2/select2.min.js' %}"></script>
+		<script src="{% static 'plugins/jquery.maskedinput/src/jquery.maskedinput.js' %}"></script>
+		<script src="{% static 'plugins/jquery-inputlimiter/jquery.inputlimiter.1.3.1.min.js' %}"></script>
+		<script src="{% static 'plugins/jquery-maskmoney/jquery.maskMoney.js' %}"></script>
+		<script src="{% static 'plugins/bootstrap-datepicker/js/bootstrap-datepicker.js' %}"></script>
+		<script src="{% static 'plugins/bootstrap-timepicker/js/bootstrap-timepicker.min.js' %}"></script>
+		<script src="{% static 'plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js' %}"></script>
+		<script src="{% static 'plugins/bootstrap-colorpicker/js/commits.js' %}"></script>
+		<script src="{% static 'plugins/bootstrap-colorpalette/js/bootstrap-colorpalette.js' %}"></script>
+		<script src="{% static 'plugins/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js' %}"></script>
+		<script src="{% static 'plugins/jQuery-Tags-Input/jquery.tagsinput.js' %}"></script>
+		<script src="{% static 'plugins/bootstrap-fileupload/bootstrap-fileupload.min.js' %}"></script>
+		<script src="{% static 'plugins/ckeditor/ckeditor.js' %}"></script>
+		<script src="{% static 'plugins/ckeditor/adapters/jquery.js' %}"></script>
+		<script src="{% static 'js/form-elements.js' %}"></script>
+                
               <!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+              
+
                 <script src="{% static 'plugins/jQuery-Smart-Wizard/js/jquery.smartWizard.js' %}"></script>
 		<script src="{% static 'js/form-wizard.js' %}"></script>   
 		<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
@@ -298,6 +340,8 @@
 				Main.init();
                                 
                                 FormWizard.init();
+                                SVExamples.init();
+				FormElements.init();
                                 
 			});
 		</script>

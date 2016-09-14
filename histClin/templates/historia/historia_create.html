@@ -27,7 +27,7 @@
         
                <div class="panel panel-white">
                        <div class="panel-heading">
-                               <h4 class="panel-title">Formulario <span class="text-bold">Pasiente</span></h4>
+                               <h4 class="panel-title">Formulario <span class="text-bold">Historia</span></h4>
                                <div class="panel-tools">
                                        <div class="dropdown">
                                                <a data-toggle="dropdown" class="btn btn-xs dropdown-toggle btn-transparent-grey">
@@ -63,6 +63,7 @@
                                    
                                        <div id="wizard" class="swMain">
                                                <ul>
+                                                       
                                                        <li>
                                                                <a href="#step-1">
                                                                        <div class="stepNumber">
@@ -70,7 +71,7 @@
                                                                        </div>
                                                                        <span class="stepDesc"> Paso 1
                                                                                <br />
-                                                                               <small>Datos Personales</small> </span>
+                                                                               <small>Observaciones y Antecedentes</small> </span>
                                                                </a>
                                                        </li>
                                                        <li>
@@ -79,26 +80,6 @@
                                                                                2
                                                                        </div>
                                                                        <span class="stepDesc"> Paso 2
-                                                                               <br />
-                                                                               <small>Informaciòn Acudiente</small> </span>
-                                                               </a>
-                                                       </li>
-                                                       <li>
-                                                               <a href="#step-3">
-                                                                       <div class="stepNumber">
-                                                                               3
-                                                                       </div>
-                                                                       <span class="stepDesc"> Paso 3
-                                                                               <br />
-                                                                               <small>Observaciones y Antecedentes</small> </span>
-                                                               </a>
-                                                       </li>
-                                                       <li>
-                                                               <a href="#step-4">
-                                                                       <div class="stepNumber">
-                                                                               4
-                                                                       </div>
-                                                                       <span class="stepDesc"> Paso 4
                                                                                <br />
                                                                                <small>Examenes y observaciones</small> </span>
                                                                </a>
@@ -109,148 +90,58 @@
                                                                <span class="sr-only"> 0% Complete (success)</span>
                                                        </div>
                                                </div>
+                                        
                                                <div id="step-1">
-                                                   
-                                                       <h2 class="StepTitle">Datos Personales</h2>
-                                                       <div class="form-group">
-                                                               <label class="col-sm-2 control-label" for="id_nombre">
-                                                                       Nombres <span class="symbol required" ></span>
-                                                               </label>
-                                                               <div class="col-sm-4">
-                                                                        {{ form.nombre }}
-                                                                </div>
-                                                       </div>
-                                                       <div class="form-group">
-                                                           <label class="col-sm-2 control-label" for="id_apellidos">
-                                                                       Apellidos <span class="symbol required"></span>
-                                                               </label>
-                                                               <div class="col-sm-4">
-                                                                       {{ form.apellidos }}
-                                                               </div>
-                                                       </div>
-                                                   <div class="form-group">
-                                                                                                                     
-                                                           <label class="col-sm-2 control-label" for="id_sexo">
-                                                                       Sexo <span class="symbol required"></span>
-                                                               </label>
-                                                           <div class="row">
-                                                               <div class="col-xs-1">
-                                                                       {{form.sexo}}
-                                                               </div>
-                                                               <label class="col-sm-2 control-label" for="id_fr">
-                                                                      Edad <span class="symbol required"></span>
-                                                               </label>
-                                                               <div class="col-xs-1">
-                                                                       {{form.edad}}
-                                                               </div>
-                                                               <label class="col-sm-2 control-label" for="id_pc">
-                                                                      Documento <span class="symbol required"></span>
-                                                               </label>
-                                                               <div class="col-xs-1">
-                                                                       {{form.Doc}}
-                                                               </div>
-                                                               
-                                                           </div>
-                                                   </div>
-                                                        <div class="form-group">
-                                                               <label class="col-sm-2 control-label"for="id_domicilio">
-                                                                     Domicilio <span class="symbol required"></span>
-                                                               </label>
-                                                               <div class="col-xs-4">
-                                                                       {{ form.domicilio }}
-                                                               </div>
-                                                            
-                                                       </div>
-                                                       
-                                                        <div class="form-group">
-
-                                                               <label class="col-sm-2 control-label" for="id_sexo">
-                                                                           Colegio <span class="symbol required"></span>
-                                                                   </label>
-                                                               <div class="row">
-                                                                   <div class="col-xs-4">
-                                                                           {{form.colegio}}
-                                                                   </div>
-                                                                   <label class="col-sm-2 control-label" for="id_fr">
-                                                                          Grado <span class="symbol required"></span>
-                                                                   </label>
-                                                                   <div class="col-xs-1">
-                                                                           {{form.grado}}
-                                                                   </div>
-                                                                   
-                                                               </div>
-                                                            </div>
-                                                       
-                                                                                                     
-                                              
-                                                       <div class="form-group">
-                                                               <div class="col-sm-2 col-sm-offset-8">
-                                                                       <button class="btn btn-blue next-step btn-block">
-                                                                               Next <i class="fa fa-arrow-circle-right"></i>
-                                                                       </button>
-                                                               </div>
-                                                       </div>
-  
-                                                       
-                                               </div>
-                                               <div id="step-2">
-                                                       <h2 class="StepTitle">Informaciòn Acudiente</h2>
-                                                                                                             
-                                                       <div class="form-group">
-                                                               <label class="col-sm-3 control-label" for="id_madre">
-                                                                      Madre <span class="symbol required"></span>
-                                                               </label>
-                                                               <div class="col-sm-7">
-                                                                       {{ form.madre }}
-                                                               </div>
-                                                       </div>
-                                                  
-                                                       <div class="form-group">
-                                                               <label class="col-sm-3 control-label" for="id_padre">
-                                                                      Padre <span class="symbol required"></span>
-                                                               </label>
-                                                               <div class="col-sm-7">
-                                                                       {{ form.padre }}
-                                                               </div>
-                                                            
-                                                       </div>
-                                                                                                           
-                                                       
+                                                       <h2 class="StepTitle">Observaciones y Antecedentes</h2>
                                                        
                                                        <div class="form-group">
-                                                               <label class="col-sm-3 control-label" for="id_telefono">
-                                                                       Telèfono <span class="symbol required"></span>
-                                                               </label>
-                                                               <div class="col-xs-3">
-                                                                       {{ form.telefono }}
-                                                               </div>
-                                                       </div>
-                                                    
-                                                             <div class="form-group">
                                                                <label class="col-sm-3 control-label" for="id_Medico">
-                                                                       Medico de Familia <span class="symbol required"></span>
+                                                                       Seleccione un paciente <span class="symbol required"></span>
                                                                </label>
                                                                <div class="col-sm-7">
-                                                                       {{ form.Medico }}
+                                                                   
+                                                                   
+                                                                   <!--prueba select -->
+                                                                   
+                                                                   <!-- termina prueba select-->
+                                                 
+                                                                   
+                                                                   
+                                                                       {{ form.pacientes }}
+                                                                       
+                                                                     <!-- comienza -->
+                                                               
+                                                                     <div class="toolbar-tools pull-right">
+                                                                     		
+											<a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#">
+												<i class="fa fa-plus"></i> Agregar
+												<div class="tooltip-notification hide">
+												</div>
+											</a>
+											<ul class="dropdown-menu dropdown-light dropdown-subview">
+												<li class="dropdown-header">
+													Paciente
+												</li>
+												<li>
+													<a href="{% url 'paciente:paciente_crear' %}" class="new-note"><span class="fa-stack"> <i class="fa fa-file-text-o fa-stack-1x fa-lg"></i> <i class="fa fa-plus fa-stack-1x stack-right-bottom text-danger"></i> </span>Nuevo</a>
+												</li>
+												
+											</ul>
+										
+                                                                     </div>
+                                                                 
+                                                                    
+                                                                     
+                                                                     <!-- termina -->
+                                                                       
+                                                                       
+                                                                       
+                                                                       
+                                                                       
+
                                                                </div>
                                                        </div>
  
-                                                       <div class="form-group">
-                                                               <div class="col-sm-2 col-sm-offset-3">
-                                                                       <button class="btn btn-light-grey back-step btn-block">
-                                                                               <i class="fa fa-circle-arrow-left"></i> Back
-                                                                       </button>
-                                                               </div>
-                                                               <div class="col-sm-2 col-sm-offset-3">
-                                                                       <button class="btn btn-blue next-step btn-block">
-                                                                               Next <i class="fa fa-arrow-circle-right"></i>
-                                                                       </button>
-                                                               </div>
-                                                       </div>
-                                               </div>
-                                           
-                                               <div id="step-3">
-                                                       <h2 class="StepTitle">Observaciones y Antecedentes</h2>
                                                                                                                                                                    
                                                        <div class="form-group">
                                                            <label class="col-sm-3 control-label" for="id_observacion_Entorno_familiar">
@@ -300,12 +191,8 @@
                                                        
                                                       
                                                        <div class="form-group">
-                                                               <div class="col-sm-2 col-sm-offset-3">
-                                                                       <button class="btn btn-light-grey back-step btn-block">
-                                                                               <i class="fa fa-circle-arrow-left"></i> Back
-                                                                       </button>
-                                                               </div>
-                                                               <div class="col-sm-2 col-sm-offset-3">
+                                                               
+                                                               <div class="col-sm-2 col-sm-offset-8">
                                                                        <button class="btn btn-blue next-step btn-block">
                                                                                Next <i class="fa fa-arrow-circle-right"></i>
                                                                        </button>
@@ -315,7 +202,7 @@
                                            
                                            
                                            
-                                               <div id="step-4">
+                                               <div id="step-2">
                                                        <h2 class="StepTitle">Examenes y observaciones</h2>
                                                        
                                                         <div class="form-group">
@@ -360,13 +247,13 @@
                                                                        Talla <span class="symbol required"></span>
                                                                </label>
                                                            <div class="row" id="contenido">
-                                                               <div class="col-xs-2">
+                                                               <div class="col-xs-1">
                                                                        {{form.talla}}
                                                                </div>
                                                                <label class="col-sm-2 control-label" for="id_peso">
                                                                       Peso <span class="symbol required"></span>
                                                                </label>
-                                                               <div class="col-xs-2">
+                                                               <div class="col-xs-1">
                                                                        {{form.peso}}
                                                                </div>
                                                                <label class="col-sm-2 control-label" for="id_imc">
@@ -463,6 +350,7 @@
                                                                        {{form.fecha_creacion}}
                                                                </div>
                                                        </div>
+                                                       
                                                        <div class="form-group">
                                                             <div class="col-sm-2 col-sm-offset-8">
                                                                     <button type="submit" class="btn btn-success">
@@ -470,11 +358,8 @@
                                                                        
                                                                     </button>
                                                             </div>
-                                                         </div>
-                                                      
-                                             
-   
-                                                       
+                                                       </div>
+                                    
                                                </div>
                                        </div>
                                </form>

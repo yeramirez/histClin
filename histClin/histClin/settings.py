@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'apps.medico',
     'apps.pacientes',
+    'apps.historia',
     'template_debug',
 
 ]
