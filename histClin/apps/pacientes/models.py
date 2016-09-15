@@ -23,5 +23,5 @@ class Paciente(models.Model):
         
         
         def __str__(self):
-            return '{} {}'.format(self.nombre,self.apellidos)
+            return '{} {} {}'.format(self.nombre,self.apellidos,self.Doc_id)
    

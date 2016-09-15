@@ -15,11 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-
+from django.views.generic import TemplateView
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^pacientes/', include('apps.pacientes.urls', namespace='paciente')),
-     url(r'^historia/', include('apps.historia.urls', namespace='historia')),
-    
+    url(r'^historia/', include('apps.historia.urls', namespace='historia')),
     url(r'^medico/', include ('apps.medico.urls')),
 ]

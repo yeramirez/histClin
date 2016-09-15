@@ -98,26 +98,44 @@
                                                                <label class="col-sm-3 control-label" for="id_Medico">
                                                                        Seleccione un paciente <span class="symbol required"></span>
                                                                </label>
-                                                               <div class="col-sm-7">
-                                                                   
-                                                                   
-                                                                   <!--prueba select -->
-                                                                   
-                                                                   <!-- termina prueba select-->
-                                                 
-                                                                   
-                                                                   
-                                                                       {{ form.pacientes }}
-                                                                       
-                                                                     <!-- comienza -->
-                                                               
+                                                               <div class="col-xs-3">
+                                                              
+                                                                   {{ form.pacientes }}
+                                                            
                                                                      <div class="toolbar-tools pull-right">
+                                                                         <!-- -->
+                                                                         
+                                                                         <li class="menu-search" >
+											<a href="">
+												<i class="fa fa-search"></i> Buscar  
+											</a>
+											<!-- start: SEARCH POPOVER -->
+											<div class="popover bottom search-box transition-all">
+												<div class="arrow"></div>
+												<div class="popover-content">
+													<!-- start: SEARCH FORM -->
+													
+														<div class="input-group">
+															&nbsp;&nbsp;<input type='text' name='cadenaBusqueda' onKeyUp="buscar_op(document.getElementById('id_pacientes'),this.value)">
+															<span class="input-group-btn">
+																<button class="btn btn-main-color btn-squared" type="button">
+																	<i class="fa fa-search"></i>
+																</button> </span>
+														</div>
+                                                                                                       
+												</div>
+											</div>
+											<!-- end: SEARCH POPOVER -->
+									</li>
+                                                                         <!-- -->
                                                                      		
 											<a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#">
 												<i class="fa fa-plus"></i> Agregar
 												<div class="tooltip-notification hide">
 												</div>
 											</a>
+                                                                                        
+                                                                         
 											<ul class="dropdown-menu dropdown-light dropdown-subview">
 												<li class="dropdown-header">
 													Paciente
@@ -127,26 +145,25 @@
 												</li>
 												
 											</ul>
+                                                                         
 										
                                                                      </div>
-                                                                 
-                                                                    
+                                                                     
+                                                               
                                                                      
                                                                      <!-- termina -->
-                                                                       
-                                                                       
-                                                                       
-                                                                       
-                                                                       
-
+                                                        
                                                                </div>
+                                                           
+                                                           
+                                                           
                                                        </div>
  
                                                                                                                                                                    
                                                        <div class="form-group">
                                                            <label class="col-sm-3 control-label" for="id_observacion_Entorno_familiar">
                                                                       Observacion y entorno familiar <span class="symbol required"></span>
-                                                               </label>
+                                                           </label>
                                                                <div class="col-sm-7">
                                                                        {{form.observacion_Entorno_familiar}}
                                                                </div>
@@ -186,9 +203,20 @@
                                                                </label>
                                                                <div class="col-sm-7">
                                                                        {{form.vacuna}}
+                                                                       <!--inicio-->
+                                                                       		
+                                                                       
+                                                                       
+                                                                       
+                                                                       
+                                                                       <!--final-->
                                                                </div>
                                                        </div>
+                                                       <!--inicio-->
                                                        
+                                                      
+                                                       
+                                                       <!--final-->
                                                       
                                                        <div class="form-group">
                                                                
@@ -375,7 +403,24 @@
 		
 		<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->	
 
-                
 {% endblock %}
 
+{% block extrajs %}
+
+<script language='JavaScript1.2'> 
+            function buscar_op(obj,cadena){ 
+               var puntero=cadena.length; 
+               var encontrado=false; 
+               var opcombo=0; 
+                  while (!encontrado && (opcombo < obj.length)){ 
+                    if(obj[opcombo].text.substr(0,puntero).toLowerCase()==cadena.toLowerCase()){ 
+                       obj.selectedIndex=opcombo; 
+                       encontrado=true; 
+                       }else{ 
+                        opcombo++; 
+                     } 
+                  } 
+            } 
+</script>
+{% endblock %}
 		

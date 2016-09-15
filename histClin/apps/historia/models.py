@@ -9,7 +9,7 @@ class Historia(models.Model):
         motivo_consulta =  models.TextField()
         antecedentes_personales = models.TextField()
         alergicos = models.CharField(max_length=100)
-        vacuna = models.CharField(max_length=10)
+        vacuna = models.ImageField(upload_to='vacuna')
         examen_fisico= models.TextField()
         fc = models.IntegerField()
         fr = models.IntegerField()                
