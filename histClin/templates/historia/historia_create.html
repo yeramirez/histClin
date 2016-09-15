@@ -91,46 +91,55 @@
                                                        </div>
                                                </div>
                                         
+                                           
                                                <div id="step-1">
                                                        <h2 class="StepTitle">Observaciones y Antecedentes</h2>
                                                        
+                                                       
+                                                       
+                                                       
                                                        <div class="form-group">
+                                                           
                                                                <label class="col-sm-3 control-label" for="id_Medico">
                                                                        Seleccione un paciente <span class="symbol required"></span>
                                                                </label>
+                                                         <div class="row">  
                                                                <div class="col-xs-3">
                                                               
+                                                                   
+                                                                   
                                                                    {{ form.pacientes }}
-                                                            
+                                                               </div>
+                                                                <div class="col-xs-1">
                                                                      <div class="toolbar-tools pull-right">
-                                                                         <!-- -->
-                                                                         
                                                                          <li class="menu-search" >
-											<a href="">
-												<i class="fa fa-search"></i> Buscar  
-											</a>
-											<!-- start: SEARCH POPOVER -->
-											<div class="popover bottom search-box transition-all">
-												<div class="arrow"></div>
-												<div class="popover-content">
-													<!-- start: SEARCH FORM -->
-													
-														<div class="input-group">
-															&nbsp;&nbsp;<input type='text' name='cadenaBusqueda' onKeyUp="buscar_op(document.getElementById('id_pacientes'),this.value)">
-															<span class="input-group-btn">
-																<button class="btn btn-main-color btn-squared" type="button">
-																	<i class="fa fa-search"></i>
-																</button> </span>
-														</div>
-                                                                                                       
-												</div>
-											</div>
-											<!-- end: SEARCH POPOVER -->
-									</li>
+                                                                                <a href="">
+                                                                                        <i class="fa fa-search"></i>   
+                                                                                </a>
+                                                                                <!-- start: SEARCH POPOVER -->
+                                                                                <div class="popover bottom search-box transition-all">
+                                                                                        <div class="arrow"></div>
+                                                                                    <div class="popover-content">
+                                                                                                <!-- start: SEARCH FORM -->
+
+                                                                                        <div class="input-group">
+                                                                                                &nbsp;&nbsp;<input type='text' name='cadenaBusqueda' onKeyUp="buscar_op(document.getElementById('id_pacientes'),this.value)">
+                                                                                                <span class="input-group-btn">
+                                                                                                        <button class="btn btn-main-color btn-squared" type="button">
+                                                                                                                <i class="fa fa-search"></i>
+                                                                                                        </button> </span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <!-- end: SEARCH POPOVER -->
+                                                                            </li>
+                                                                     </div>
+                                                                    
+                                                                <div class="col-xs-3">
                                                                          <!-- -->
-                                                                     		
+                                                                        
 											<a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#">
-												<i class="fa fa-plus"></i> Agregar
+												<i class="fa fa-plus"></i> 
 												<div class="tooltip-notification hide">
 												</div>
 											</a>
@@ -145,18 +154,13 @@
 												</li>
 												
 											</ul>
-                                                                         
-										
-                                                                     </div>
-                                                                     
-                                                               
-                                                                     
+                                                                       </div>
+                                                                </div>    
                                                                      <!-- termina -->
                                                         
-                                                               </div>
-                                                           
-                                                           
-                                                           
+                                                               
+                                                              
+                                                          </div>
                                                        </div>
  
                                                                                                                                                                    
