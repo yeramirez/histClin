@@ -1,5 +1,5 @@
 from django.conf.urls import url, include
-from apps.historia.views import index, historia_view, historia_list
+from apps.historia.views import index, historia_view, historia_edit
 from apps.pacientes.views import paciente_list
 # At the top of your urls.py file, add the following line:
 from django.conf import settings
@@ -10,7 +10,5 @@ from django.conf import settings
 urlpatterns = [
     url(r'^$', index, name='index'),
     url(r'^nuevo$', historia_view.as_view(), name='historia_crear'),
-    
-    url(r'^listar$', paciente_list.as_view(), name='paciente_listar'),
-    
-]
+    url(r'^editar/(?P<pk>\d+)/$', historia_edit.as_view(), name='historia_editar'),
+ ]

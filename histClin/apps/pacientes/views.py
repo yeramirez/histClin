@@ -24,6 +24,7 @@ class paciente_list(ListView):
     model = Paciente
     template_name = 'pacientes/paciente_list.html'
     success_url = reverse_lazy('paciente:paciente_listar')
+    
 
 class paciente_mostrar(ListView):
     model = Paciente
@@ -31,15 +32,15 @@ class paciente_mostrar(ListView):
    # success_url = reverse_lazy('paciente:paciente_listar')
     def post(self, request, *args, **kwargs ):
         buscar = request.POST['paciente']
-        dpacientes =  Paciente.objects.filter(nombre__contains=buscar)
-        print(dpacientes)
+        bpacientes =  Paciente.objects.filter(nombre__contains=buscar)
+        
         datos = []
         
-        for paciente in dpacientes:
+        for paciente in bpacientes:
             historias = Historia.objects.filter(pacientes__nombre__icontains=buscar)
             datos.append(dict([(paciente,historias)]))
             
-        print(datos)
+        
         return render(request,'pacientes/paciente_mostrar.html', {'datos':datos})
         
     

@@ -47,18 +47,18 @@
                         <div class="panel-body">
                             
                          <table class="table table-bordered">
-	<thead>
-		<tr>
-			
-			<td>Nombre</td>
-			<td>Apellidos</td>
-                        <td>Documento</td>
-                        <td>Editar</td>
-			
-		</tr>
-		
-	</thead>
-   	<tbody>
+                                <thead>
+                                        <tr>
+
+                                                <td>Nombre</td>
+                                                <td>Apellidos</td>
+                                                <td>Documento</td>
+                                                <td>Editar</td>
+
+                                        </tr>
+
+                                </thead>
+                        <tbody>
                            
                                 {%for dato in datos %}
                                 
@@ -67,43 +67,87 @@
                                         
                                         <td>{{ paciente.nombre}}</td>
                                         <td>{{ paciente.apellidos }}</td>
-                                        <td>{{ paciente.Doc_id }}</td>
+                                        <td>{{ paciente.Doc }}</td>
                                         
 			
 			
-			<td>
-			 	<a class="btn btn-primary" href="{% url 'paciente:paciente_editar' paciente.Doc_id %}">Editar</a>
-			 	
-			</td>
-					
-		</tr>
+                                        <td>
+                                                <a class="btn btn-primary" href="{% url 'paciente:paciente_editar' paciente.id %}">Editar</a>
+
+                                        </td>
+
+                                </tr>
         
+                                <td>
+                                <div class="col-md-6">
+                                    <div class="panel panel-white">
+
+                                            <div class="panel-body">
+                                                <div id="tree" class="tree-demo">
+                                                     <ul>
+                                                         <li>
+
+                                                             <ul>
+                                
                                     
-                                        {% for a in historias %}
-                                         <thead>
-		<tr>
-			
-			<td>Fecha Historia</td>
-			
-			
-		</tr>
-		
-	</thead>
-        <tbody>
-                                                                                        
-        <td> {{a.fecha_creacion}}</td>
-                                            
+                                        {% for historia in historias %}
+                       
+                                        
+                                                
+                                                                <li data-jstree='{ "selected" : true }'>
+                                                                        <a href="{% url 'historia:historia_editar' historia.id %}">
+
+                                                                            {{historia.fecha_creacion}}
+
+
+                                                                        </a>
+                                                                </li>
+
+                                                                             
+
                                         {% endfor %}
                                         
+                                                            </ul>
+                                                       </li>
+
+                                                   </ul>
+                                               </div>
+                                           </div>
+                                   </div>
+                               </div>
+                                </td>
                                     {% endfor%}
-        </tbody>
+        
                                 
                                 {% endfor %}
+                                
+                                <!--inicio-->
+                                
+							
+												
+													
+																
+							
+                                <!--final-->
      
          
       </tbody>
 </table>
 
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
                             
                     
                         </div>

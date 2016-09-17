@@ -40,6 +40,7 @@
 		<link rel="stylesheet" href="{% static 'plugins/bootstrap-daterangepicker/daterangepicker-bs3.css' %}">
 		
 		<!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
+                <link rel="stylesheet" href="{% static 'plugins/jstree/dist/themes/default/style.css' %}">
 		<!-- start: CORE CSS -->
 				
                 <link rel="stylesheet" href="{% static 'plugins/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css' %}">
@@ -337,6 +338,8 @@
 		<script src="{% static 'js/form-elements.js' %}"></script>
                 
               <!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+                <script src="{% static 'plugins/jstree/dist/jstree.min.js' %}"></script>
+		<script src="{% static 'js/ui-treeview.js' %}"></script>
               
 
                 <script src="{% static 'plugins/jQuery-Smart-Wizard/js/jquery.smartWizard.js' %}"></script>
@@ -349,7 +352,7 @@
 			jQuery(document).ready(function() {
 				Main.init();
                                 FormWizard.init();
-                                
+                                UITreeview.init();
 			
                                 
 			});

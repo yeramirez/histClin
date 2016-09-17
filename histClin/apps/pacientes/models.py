@@ -12,7 +12,7 @@ class Paciente(models.Model):
         Sex=(('M','Masculino'),('F','Femenino'),('O','Otro'))
         sexo = models.CharField(max_length= 1,choices=Sex)
         edad = models.IntegerField()
-        Doc_id  = models.IntegerField(primary_key=True)
+        Doc  = models.IntegerField(unique=True)
         domicilio = models.CharField(max_length=30)
         colegio = models.CharField(max_length=10)
         grado = models.IntegerField()
@@ -23,5 +23,5 @@ class Paciente(models.Model):
         
         
         def __str__(self):
-            return '{} {} {}'.format(self.nombre,self.apellidos,self.Doc_id)
+            return '{} {} {}'.format(self.nombre,self.apellidos,self.Doc)
    
