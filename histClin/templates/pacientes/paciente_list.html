@@ -45,65 +45,46 @@
                                 </div>
                         </div>
                         <div class="panel-body">
-                                <div class="row">
-                                        <div class="col-md-12 space20">
-                                            <button class="btn btn-green add-row " href="{% url 'paciente:paciente_crear' %}" > 
-                                                        Nuevo <i class="fa fa-plus" ></i>
-                                                         
-                                                </button>
-                                        </div>
+                          
+                                
+                                <div class="col-md-3 space20">                                              
+                                       <div class="row">
+                                           
+                                          
+                                                <li class="menu-search">
+                                                        <a href="#">
+                                                                <i class="fa fa-search"></i> SEARCH
+                                                        </a>
+                                                        <!-- start: SEARCH POPOVER -->
+                                                        <div class="popover bottom search-box transition-all">
+                                                                <div class="arrow"></div>
+                                                                <div class="popover-content">
+                                                                        <!-- start: SEARCH FORM -->
+                                                                        <form  class="" id="searchform" method="POST" action="{% url 'paciente:paciente_mostrar' %}">{% csrf_token %}
+                                                                                <div class="input-group">
+                                                                                        <input type="text" name="paciente" class="form-control" placeholder="Search">
+                                                                                        <span class="input-group-btn">
+                                                                                                <button class="btn btn-main-color btn-squared" type="button">
+                                                                                                        <i class="fa fa-search"></i>
+                                                                                                </button> </span>
+                                                                                </div>
+                                                                        </form>
+                                                                        <!-- end: SEARCH FORM -->
+                                                                </div>
+                                                        </div>
+                                                        <!-- end: SEARCH POPOVER -->
+                                                </li>
+                                        
+                                       </div>  
+                                    
                                 </div>
-                                <div class="table-responsive">
-                                        <table class="table table-striped table-hover" id="sample_2">
-                                                <thead>
-                                                        <tr>
-                                                                <td>id</td>
-                                                                <td>Nombre</td>
-                                                                <td>Apellidos</td>
-                                                                <td>Sexo</td>
-                                                                <td>Edad</td>
-                                                                <td>Telefono</td>
-                                                                <td>Direccion</td>
-                                                                <td>Colegio</td>
-                                                                <td>Medico</td>
-                                                                <th>Edit</th>
-                                                                <th>Delete</th>
-                                                        </tr>
-                                                </thead>
-                                                <tbody>
+                           </div>
+                    <div class="table-responsive">
 
-                                                {% if object_list %}
-                                                {% for paciente in object_list %}
-                                                                <tr>
-                                                                        <td>{{ paciente.id }}</td>
-                                                                        <td>{{ paciente.nombre}}</td>
-                                                                        <td>{{ paciente.apellidos }}</td>
-                                                                        <td>{{ paciente.sexo }}</td>
-                                                                        <td>{{ paciente.edad }}</td>
-                                                                        <td>{{ paciente.telefono }}</td>
-                                                                        <td>{{ paciente.domicilio }}</td>
-                                                                        <td>{{ paciente.colegio }}</td>
-                                                                        <td>{{ paciente.Medico }}</td>
-
-
-                                                                        <td><a  class="edit-row" href="{% url 'paciente:paciente_editar' paciente.Doc_id %}">Editar</a></td>
-                                                                        <td><a  class="edit-row" href="{% url 'paciente:paciente_eliminar' paciente.Doc_id %}">Eliminar</a></td>
-
-
-                                                                </tr>
-                                                                {% endfor %}
-
-                                                                {% else %}
-                                                                <h1> No hay registros de pacientes</h1>
-                                                                {% endif %}
-                                                        </tr>
-                                                </tbody>
-                                        </table>
-                                </div>
-                        </div>
+                    </div>
                 </div>
         </div>
-</div>
+ </div>
 
 						
 

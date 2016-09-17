@@ -36,8 +36,7 @@ class HistoriaForm(forms.ModelForm):
             'observaciones',
             'fecha_creacion',
             'pacientes',
-            
-            
+                   
         ]
         
         widgets = {
@@ -48,7 +47,7 @@ class HistoriaForm(forms.ModelForm):
             'motivo_consulta': forms.Textarea(attrs={'class':'form-control'}),
             'antecedentes_personales': forms.Textarea(attrs={'class':'form-control'}),
             'alergicos': forms.TextInput(attrs={'class':'form-control'}),
-            'vacuna': forms.TextInput(attrs={'class':'form-control'}),
+            'vacuna': forms.FileInput(attrs={'class':'fileupload-new'}),
             'examen_fisico': forms.Textarea(attrs={'class':'form-control'}),
             'fc': forms.TextInput(attrs={'class':'form-control','size':'2'}),
             'fr': forms.TextInput(attrs={'class':'form-control','size':'2'}),

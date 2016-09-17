@@ -1,0 +1,116 @@
+
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+<div class="row">
+       <div class="col-md-12">
+               <ol class="breadcrumb">
+                       <li>
+                               <a href="#">
+                                       Inicio
+                               </a>
+                       </li>
+                       <li class="active">
+                               Listar
+                       </li>
+               </ol>
+       </div>
+</div>
+
+<div class="row">
+        <div class="col-md-12">
+                <!-- start: DYNAMIC TABLE PANEL -->
+                <div class="panel panel-white">
+                        <div class="panel-heading">
+                                <h4 class="panel-title">Editar <span class="text-bold">Paciente</span></h4>
+                                <div class="panel-tools">
+                                        <div class="dropdown">
+                                                <a data-toggle="dropdown" class="btn btn-xs dropdown-toggle btn-transparent-grey">
+                                                        <i class="fa fa-cog"></i>
+                                                </a>
+                                                <ul class="dropdown-menu dropdown-light pull-right" role="menu">
+                                                        
+                                                       
+                                                        <li>
+                                                                <a class="panel-expand" href="#">
+                                                                        <i class="fa fa-expand"></i> <span>Fullscreen</span>
+                                                                </a>
+                                                        </li>
+                                                </ul>
+                                        </div>
+                                        <a class="btn btn-xs btn-link panel-close" href="#">
+                                                <i class="fa fa-times"></i>
+                                        </a>
+                                </div>
+                        </div>
+                        <div class="panel-body">
+                            
+                         <table class="table table-bordered">
+	<thead>
+		<tr>
+			
+			<td>Nombre</td>
+			<td>Apellidos</td>
+                        <td>Documento</td>
+                        <td>Editar</td>
+			
+		</tr>
+		
+	</thead>
+   	<tbody>
+                           
+                                {%for dato in datos %}
+                                
+                                    {% for paciente,historias in dato.items %}
+                                    <tr>
+                                        
+                                        <td>{{ paciente.nombre}}</td>
+                                        <td>{{ paciente.apellidos }}</td>
+                                        <td>{{ paciente.Doc_id }}</td>
+                                        
+			
+			
+			<td>
+			 	<a class="btn btn-primary" href="{% url 'paciente:paciente_editar' paciente.Doc_id %}">Editar</a>
+			 	
+			</td>
+					
+		</tr>
+        
+                                    
+                                        {% for a in historias %}
+                                         <thead>
+		<tr>
+			
+			<td>Fecha Historia</td>
+			
+			
+		</tr>
+		
+	</thead>
+        <tbody>
+                                                                                        
+        <td> {{a.fecha_creacion}}</td>
+                                            
+                                        {% endfor %}
+                                        
+                                    {% endfor%}
+        </tbody>
+                                
+                                {% endfor %}
+     
+         
+      </tbody>
+</table>
+
+                            
+                    
+                        </div>
+                </div>
+        </div>
+</div>
+
+						
+
+{% endblock %}

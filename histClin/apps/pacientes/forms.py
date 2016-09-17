@@ -17,7 +17,7 @@ class PacienteForm(forms.ModelForm):
         model = Paciente
         
         fields = [
-        
+           
             'nombre',
             'apellidos',
             'sexo',

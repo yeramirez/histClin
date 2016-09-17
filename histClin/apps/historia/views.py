@@ -17,7 +17,7 @@ class historia_view(CreateView):
     model = Historia
     form_class = HistoriaForm
     template_name = 'historia/historia_create.html'
-    success_url = reverse_lazy('historia:historia_create')       
+    success_url = reverse_lazy('historia:paciente_listar')       
 
 class historia_list(ListView):
     

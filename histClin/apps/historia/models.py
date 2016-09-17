@@ -30,6 +30,6 @@ class Historia(models.Model):
         
         
         def __str__(self):
-            return '{}'.format(self.fecha_creacion)
+            return '{}{}'.format(self.fecha_creacion,self.alergicos)
    
         
