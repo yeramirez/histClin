@@ -1,0 +1,331 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+{% block extrastatic %}	
+{% endblock %}
+<div class="row">
+       <div class="col-md-12">
+               <ol class="breadcrumb">
+                       <li>
+                               <a href="#">
+                                       Dashboard
+                               </a>
+                       </li>
+                       <li class="active">
+                               Formulario Pasiente
+                       </li>
+               </ol>
+       </div>
+</div>
+<!-- end: BREADCRUMB -->
+<!-- start: PAGE CONTENT -->
+<div class="row">
+       <div class="col-sm-12">
+               <!-- start: FORM WIZARD PANEL -->
+        
+               <div class="panel panel-white">
+                       <div class="panel-heading">
+                               <h4 class="panel-title">Historia <span class="text-bold">Clinica</span></h4>
+                               <div class="panel-tools">
+                                       <div class="dropdown">
+                                               <a data-toggle="dropdown" class="btn btn-xs dropdown-toggle btn-transparent-grey">
+                                                       <i class="fa fa-cog"></i>
+                                               </a>
+                                               <ul class="dropdown-menu dropdown-light pull-right" role="menu">
+                                                      
+                                                       
+                                                       
+                                                       <li>
+                                                               <a class="panel-expand" href="#">
+                                                                       <i class="fa fa-expand"></i> <span>Fullscreen</span>
+                                                               </a>
+                                                       </li>
+                                               </ul>
+                                       </div>
+                               </div>
+                       </div>
+                   
+           <div class="panel-body">
+                 <div class="invoice">
+                        <div class="row invoice-logo">
+                               <div class="col-sm-6">
+                                   
+                                   
+                                                    <img alt="" src="{ % static 'images/your-logo-here.png' %}">
+                                   {% for datos in paciente %}                 
+                               </div>
+                                            <div class="col-sm-6">
+                                                
+                                                    <p>
+                                                    {{ object_list.fecha_creacion}}
+                                                                                  
+                                                    </p>
+                                                 
+                                                 
+                        </div>
+                            <div class="col-sm-4">
+                                    <h4>Paciente:</h4>
+                                    <div class="well">
+                                            <address>
+                                                    <strong>Nombre</strong>
+                                                    <br>
+                                                    {{datos.nombre}}
+                                                    <br>
+                                                    {{datos.apellidos}}
+                                                    <br>
+                                                    <abbr title="Phone">Telefono:</abbr> {{datos.telefono}}
+                                            </address>
+                                            <address>
+                                                    <strong>E-mail</strong>
+                                                    <br>
+                                                    <a href="mailto:#">
+                                                            info@customer.com
+                                                    </a>
+                                            </address>
+                                    </div>
+                            </div>
+
+                        </div>
+                                    {%endfor%}
+                                    
+                            <!--inicio-->
+                        	<hr>
+                                
+                                
+                        <table class="table table-bordered table-hover" id="sample-table-4">
+                            <thead>
+                                    <tr>
+                                            <th><i class="fa fa-time"></i> OBSERVACION ENTORNO FAMILIAR </th>
+                                    </tr>
+                            </thead>
+                            <tbody>
+                                    <tr>
+                                            <td>
+                                                {{object_list.observacion_Entorno_familiar}}
+                                            </td>
+                                    </tr>
+
+                            </tbody>
+            
+                            <thead>
+                                    <tr>
+                                            <th><i class="fa fa-time"></i> MOTIVO DE LA CONSULTA </th>
+                                    </tr>
+                            </thead>
+                            <tbody>
+                                    <tr>
+                                            <td>
+                                                {{object_list.motivo_consulta}}
+                                            </td>
+                                    </tr>
+
+                            </tbody>
+                            
+                            <thead>
+                                    <tr>
+                                            <th><i class="fa fa-time"></i> ANTECEDENTES PERSONALES </th>
+                                    </tr>
+                            </thead>
+                            <tbody>
+                                    <tr>
+                                            <td>
+                                                {{object_list.antecedentes_personales}}
+                                            </td>
+                                    </tr>
+
+                            </tbody>
+                            
+                               <thead>
+                                    <tr>
+                                            <th><i class="fa fa-time"></i> ALERGICOS </th>
+                                    </tr>
+                            </thead>
+                            <tbody>
+                                    <tr>
+                                            <td>
+                                                {{object_list.alergicos}}
+                                            </td>
+                                          
+                                    </tr>
+
+                            </tbody>
+                            
+                            <thead>
+                                    <tr>
+                                            <th><i class="fa fa-time"></i> CARNET DE VACUNACION </th>
+                                    </tr>
+                            </thead>
+                            <tbody>
+                                    <tr>
+                                            <td>
+                                                
+                                                {% load static %}
+                                               <img src="{% static "{{object_list.vacuna}}" %}" alt="my image">
+                                                
+                                            
+                                            </td>
+                                              
+                                    </tr>
+
+                            </tbody>
+                            <thead>
+                                    <tr>
+                                            <th><i class="fa fa-time"></i> CABEZA & CUELLO  </th>
+                                    </tr>
+                            </thead>
+                            <tbody>
+                                    <tr>
+                                            <td>
+                                                {{ object_list.cabeza_cuello }}
+                                            </td>
+                                              
+                                    </tr>
+
+                            </tbody>
+                            <thead>
+                                    <tr>
+                                            <th><i class="fa fa-time"></i> CARDIO PULMONAR  </th>
+                                    </tr>
+                            </thead>
+                            <tbody>
+                                    <tr>
+                                            <td>
+                                                {{ object_list.cardio_pulmonar }}
+                                            </td>
+                                              
+                                    </tr>
+
+                            </tbody>
+                            
+                             <thead>
+                                    <tr>
+                                            <th><i class="fa fa-time"></i> ABDOMEN </th>
+                                    </tr>
+                            </thead>
+                            <tbody>
+                                    <tr>
+                                            <td>
+                                                {{ object_list.abdomen }}
+                                            </td>
+                                              
+                                    </tr>
+
+                            </tbody>
+                          <thead>
+                                    <tr>
+                                            <th><i class="fa fa-time"></i> EXTREMIDADES </th>
+                                    </tr>
+                            </thead>
+                            <tbody>
+                                    <tr>
+                                            <td>
+                                                {{ object_list.extremidades }}
+                                            </td>
+                                              
+                                    </tr>
+
+                            </tbody>
+                            
+                            <thead>
+                                    <tr>
+                                            <th><i class="fa fa-time"></i> PIEL & ANEXOS </th>
+                                    </tr>
+                            </thead>
+                            <tbody>
+                                    <tr>
+                                            <td>
+                                                {{ object_list.piel_anexos }}
+                                            </td>
+                                              
+                                    </tr>
+
+                            </tbody>
+                            
+                            <thead>
+                                    <tr>
+                                            <th><i class="fa fa-time"></i> OBSERVACIONES </th>
+                                    </tr>
+                            </thead>
+                            <tbody>
+                                    <tr>
+                                            <td>
+                                                {{ object_list.observaciones }}
+                                            </td>
+                                              
+                                    </tr>
+
+                            </tbody>
+                          
+             <div class="row">
+                <div class="col-sm-12">
+                        
+                         </div>   
+                    </div>
+                       
+             </div>                         
+                                
+            								
+                                
+                            <!--fin--->
+                                    
+                            
+                                    
+                       
+                        <table class="table table-striped table-hover">
+                                <thead>
+                                        <tr>
+                                                <th>FC</th>
+                                                <th>FR</th>
+                                                <th class="hidden-480">PC</th>
+                                                <th class="hidden-480">AV</th>
+                                                <th><i class="hidden-480"></i> Talla </th>
+                                                <th class="hidden-480">Peso</th>
+                                                <th class="hidden-480">PA</th>
+                                                <th class="hidden-480">IMC</th>
+                                        </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                                <td class=" hidden-480">
+                                                  {{ object_list.fc }}  
+                                                </td>
+                                                   
+                                                <td class="hidden-480">
+                                                     {{ object_list.fr }}
+                                                </td>
+                                                <td class="hidden-480"> {{ object_list.pc }}</td>
+                                                <td class="hidden-480"> {{ object_list.av }}</td>
+                                                <td class="hidden-480">{{ object_list.talla }}</td>
+                                                <td class="hidden-480">{{ object_list.peso }}</td>
+                                                <td class="hidden-480">{{ object_list.pa }}</td>
+                                                <td class="hidden-480"> <span class="label label-sm label-warning">{{ object_list.imc }}</span></td>
+                                        </tr>
+                                 </tbody> 
+                            </table>  
+                               
+                           </div>
+                        </div>
+                         <div class="row">
+                           <div class="col-sm-12">
+                                                    <br>
+                                                    <a onclick="javascript:window.print();" class="btn btn-lg btn-light-blue hidden-print">
+                                                            Print <i class="fa fa-print"></i>
+                                                    </a>
+                                                    
+                                            </div>
+                                    </div>
+                            </div>
+                    </div>
+            </div>
+               <!-- end: FORM WIZARD PANEL -->
+        </div>
+</div>
+						<!-- end: PAGE CONTENT-->
+			
+<!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+		
+		<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->	
+
+				
+
+{% endblock %}

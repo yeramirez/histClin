@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from apps.historia.forms import HistoriaForm
 from apps.historia.models import Historia
+from apps.pacientes.models import Paciente
 from django.views.generic import ListView,CreateView,UpdateView
 from django.core.urlresolvers import reverse_lazy
 #Instalar para campo de formulario con fecha
@@ -29,7 +30,15 @@ class historia_edit(UpdateView):
 class historia_list(ListView):
     
     model = Historia
-    form_class = HistoriaForm
-    template_name = 'historia/historia_create.html'
-    success_url = reverse_lazy('historia:historia_create')
+    template_name = 'historia/historia_mostrar.html'
+    def get_queryset(self):
+      
+       return Historia.objects.get(pk=self.kwargs['pk'])
+    
+    
+    def get_context_data(self,  **kwargs):
+        context=super(historia_list,self).get_context_data(**kwargs)
+        context['paciente']=Paciente.objects.filter(historia__id=self.kwargs['pk'])
+        return context
+    
     

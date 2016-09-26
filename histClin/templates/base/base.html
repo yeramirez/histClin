@@ -338,8 +338,9 @@
 		<script src="{% static 'js/form-elements.js' %}"></script>
                 
               <!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
-                <script src="{% static 'plugins/jstree/dist/jstree.min.js' %}"></script>
+                <script src="{% static 'plugins/jstree/dist/jstree.js' %}"></script>
 		<script src="{% static 'js/ui-treeview.js' %}"></script>
+                <script src="{% static 'js/ui-subview.js' %}"></script>
               
 
                 <script src="{% static 'plugins/jQuery-Smart-Wizard/js/jquery.smartWizard.js' %}"></script>
@@ -353,8 +354,8 @@
 				Main.init();
                                 FormWizard.init();
                                 UITreeview.init();
+                                UISubview.init();
 			
-                                
 			});
 		</script>
                
