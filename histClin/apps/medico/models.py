@@ -1,14 +1,15 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 # Create your models here.
 
-class Medico(models.Model):
-       nombre = models.CharField(max_length=50)
-       apellidos = models.CharField(max_length=20)
+class Medico(User):
+       
+       Sex=(('M','Masculino'),('F','Femenino'),('O','Otro'))
+       sexo = models.CharField(max_length= 1,choices=Sex)
        especialidad = models.CharField(max_length=50)
        telefono = models.CharField(max_length=12)
        firma = models.ImageField(upload_to='firma')
-    
-        
+       imgperfil = models.ImageField(upload_to='perfil',null=True)
+ 
        def __str__(self):
-        return '{} {}'.format(self.nombre, self.apellidos)
+        return '{} {}'.format(self.first_name, self.last_name)

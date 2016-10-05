@@ -73,13 +73,14 @@
                                                     <br>
                                                     {{datos.apellidos}}
                                                     <br>
-                                                    <abbr title="Phone">Telefono:</abbr> {{datos.telefono}}
+                                                    
+                                                    <abbr title="Telefono">Telefono:</abbr> {{datos.telefono}}
                                             </address>
                                             <address>
                                                     <strong>E-mail</strong>
                                                     <br>
                                                     <a href="mailto:#">
-                                                            info@customer.com
+                                                            {{datos.mail}}
                                                     </a>
                                             </address>
                                     </div>
@@ -160,7 +161,7 @@
                                             <td>
                                                 
                                                 {% load static %}
-                                               <img src="{% static "{{object_list.vacuna}}" %}" alt="my image">
+                                               <img src="{% static object_list.vacuna.url %}" alt="my image">
                                                 
                                             
                                             </td>
@@ -168,6 +169,47 @@
                                     </tr>
 
                             </tbody>
+                            
+                        </table>
+                                <div>
+                            <hr>        
+                        <table class="table table-striped table-hover">
+                                <thead>
+                                        <tr>
+                                                <th>FC</th>
+                                                <th>FR</th>
+                                                <th class="hidden-480">PC</th>
+                                                <th class="hidden-480">AV</th>
+                                                <th><i class="hidden-480"></i> Talla </th>
+                                                <th class="hidden-480">Peso</th>
+                                                <th class="hidden-480">PA</th>
+                                                <th class="hidden-480">IMC</th>
+                                        </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                                <td class=" hidden-480">
+                                                  {{ object_list.fc }}  
+                                                </td>
+                                                   
+                                                <td class="hidden-480">
+                                                     {{ object_list.fr }}
+                                                </td>
+                                                <td class="hidden-480"> {{ object_list.pc }}</td>
+                                                <td class="hidden-480"> {{ object_list.av }}</td>
+                                                <td class="hidden-480">{{ object_list.talla }}</td>
+                                                <td class="hidden-480">{{ object_list.peso }}</td>
+                                                <td class="hidden-480">{{ object_list.pa }}</td>
+                                                <td class="hidden-480"> <span class="label label-sm label-warning">{{ object_list.imc }}</span></td>
+                                        </tr>
+                                 </tbody> 
+                            </table>  
+                                    
+                                                                    
+                                </div>
+                             <hr>   
+                                
+                         <table class="table table-bordered table-hover" id="sample-table-4">
                             <thead>
                                     <tr>
                                             <th><i class="fa fa-time"></i> CABEZA & CUELLO  </th>
@@ -255,6 +297,7 @@
                                     </tr>
 
                             </tbody>
+                         </table>
                           
              <div class="row">
                 <div class="col-sm-12">
@@ -263,45 +306,12 @@
                     </div>
                        
              </div>                         
-                                
-            								
-                                
+             
                             <!--fin--->
                                     
                             
                                     
                        
-                        <table class="table table-striped table-hover">
-                                <thead>
-                                        <tr>
-                                                <th>FC</th>
-                                                <th>FR</th>
-                                                <th class="hidden-480">PC</th>
-                                                <th class="hidden-480">AV</th>
-                                                <th><i class="hidden-480"></i> Talla </th>
-                                                <th class="hidden-480">Peso</th>
-                                                <th class="hidden-480">PA</th>
-                                                <th class="hidden-480">IMC</th>
-                                        </tr>
-                                </thead>
-                                <tbody>
-                                        <tr>
-                                                <td class=" hidden-480">
-                                                  {{ object_list.fc }}  
-                                                </td>
-                                                   
-                                                <td class="hidden-480">
-                                                     {{ object_list.fr }}
-                                                </td>
-                                                <td class="hidden-480"> {{ object_list.pc }}</td>
-                                                <td class="hidden-480"> {{ object_list.av }}</td>
-                                                <td class="hidden-480">{{ object_list.talla }}</td>
-                                                <td class="hidden-480">{{ object_list.peso }}</td>
-                                                <td class="hidden-480">{{ object_list.pa }}</td>
-                                                <td class="hidden-480"> <span class="label label-sm label-warning">{{ object_list.imc }}</span></td>
-                                        </tr>
-                                 </tbody> 
-                            </table>  
                                
                            </div>
                         </div>

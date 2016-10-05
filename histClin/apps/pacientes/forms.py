@@ -20,6 +20,7 @@ class PacienteForm(forms.ModelForm):
            
             'nombre',
             'apellidos',
+            'mail',
             'sexo',
             'edad',
             'Doc',
@@ -38,6 +39,7 @@ class PacienteForm(forms.ModelForm):
             
             'nombre':forms.TextInput(attrs={'class':'form-control'}),
             'apellidos': forms.TextInput(attrs={'class':'form-control'}),
+            'email':forms.EmailInput(),
             'sexo': forms.Select(attrs={'class':'form-form-control'},choices=TITLE_SEXO),
             'edad': forms.TextInput(attrs={'rows':'2','class':'form-control'}),
             'Doc': forms.TextInput(attrs={'class':'form-control'}),

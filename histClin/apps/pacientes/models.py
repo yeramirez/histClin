@@ -9,6 +9,7 @@ class Paciente(models.Model):
         
         nombre = models.CharField(max_length = 20)
         apellidos = models.CharField(max_length = 20)
+        mail = models.EmailField()
         Sex=(('M','Masculino'),('F','Femenino'),('O','Otro'))
         sexo = models.CharField(max_length= 1,choices=Sex)
         edad = models.IntegerField()

@@ -18,9 +18,14 @@ from django.contrib import admin
 from django.views.generic import TemplateView
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib.auth.views import login, logout_then_login
+
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^pacientes/', include('apps.pacientes.urls', namespace='paciente')),
     url(r'^historia/', include('apps.historia.urls', namespace='historia')),
-    url(r'^medico/', include ('apps.medico.urls')),
+    url(r'^medicos/', include ('apps.medico.urls', namespace='medico')),
+    url(r'^accounts/login/', login,{'template_name':'index.html'},name='login' ),
+    url(r'^logout/', logout_then_login, name='logout'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

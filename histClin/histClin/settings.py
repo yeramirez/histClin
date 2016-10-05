@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
 import os
+from django.core.urlresolvers import reverse_lazy
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -42,6 +43,7 @@ INSTALLED_APPS = [
     'apps.medico',
     'apps.pacientes',
     'apps.historia',
+    'apps.formula',
     'template_debug',
 
 ]
@@ -134,7 +136,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 MEDIA_URL = '/media/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
-
+LOGIN_REDIRECT_URL = reverse_lazy('paciente:paciente_listar')
+LOGOUT_REDIRECT_URL = reverse_lazy('login')
 
 
 

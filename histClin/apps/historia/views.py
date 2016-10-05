@@ -8,8 +8,7 @@ from django.core.urlresolvers import reverse_lazy
 #Instalar para campo de formulario con fecha
 #https://github.com/nkunihiko/django-bootstrap3-datetimepicker
 
-def index(request):
-    return render(request, 'historia/index.html')
+
 
 #----------Vista para  las historias 
 

@@ -136,7 +136,7 @@
 								<ul class="dropdown-menu dropdown-dark">
 								
 									<li>
-										<a href="login_login.html">
+										<a href="{% url 'logout' %}">
 											Log Out
 										</a>
 									</li>
@@ -164,11 +164,11 @@
 						</div>
 						<div class="user-profile border-top padding-horizontal-10 block">
 							<div class="inline-block">
-								<img src="{% static 'images/avatar-1.jpg' %}" alt="">
+								<img src="{% static user.imgperfil.url %}" alt="">
 							</div>
 							<div class="inline-block">
 								<h5 class="no-margin"> Bienvenido </h5>
-                                                                <h4 class="no-margin"> Andres Gomez </h4>
+                                                                <h4 class="no-margin"> {{ user.first_name|capfirst}} {{ user.last_name|capfirst}} </h4>
 								<a class="btn user-options sb_toggle">
 									<i class="fa fa-cog"></i>
 								</a>
@@ -184,6 +184,12 @@
 							<li>
 								<a href="javascript:void(0)"><i class="fa fa-desktop"></i> <span class="title"> Historia Clinica </span><i class="icon-arrow"></i> </a>
 								<ul class="sub-menu">
+                                                                    
+                                                                        <li>
+										<a href="{% url 'medico:medico_crear' %}">
+											<span class="title"> Crear Medico  </span>
+										</a>
+									</li>
 				
 									<li>
 										<a href="{% url 'paciente:paciente_crear' %}">

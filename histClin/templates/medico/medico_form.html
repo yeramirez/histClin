@@ -1,0 +1,231 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+
+<div class="row">
+       <div class="col-md-12">
+               <ol class="breadcrumb">
+                       <li>
+                               <a href="#">
+                                       Dashboard
+                               </a>
+                       </li>
+                       <li class="active">
+                               Crear Medico
+                       </li>
+               </ol>
+       </div>
+</div>
+<!-- end: BREADCRUMB -->
+<!-- start: PAGE CONTENT -->
+<div class="row">
+       <div class="col-sm-12">
+               <!-- start: FORM WIZARD PANEL -->
+               	<div class="panel panel-white">
+                        <div class="panel-heading">
+                                <h4 class="panel-title">Formulario <span class="text-bold">Validacion 1</span></h4>
+                                <div class="panel-tools">
+                                        <div class="dropdown">
+                                                <a data-toggle="dropdown" class="btn btn-xs dropdown-toggle btn-transparent-grey">
+                                                        <i class="fa fa-cog"></i>
+                                                </a>
+                                                <ul class="dropdown-menu dropdown-light pull-right" role="menu">
+                                                                                                              
+                                                        <li>
+                                                                <a class="panel-expand" href="#">
+                                                                        <i class="fa fa-expand"></i> <span>Fullscreen</span>
+                                                                </a>
+                                                        </li>
+                                                </ul>
+                                        </div>
+                                        <a class="btn btn-xs btn-link panel-close" href="#">
+                                                <i class="fa fa-times"></i>
+                                        </a>
+                                </div>
+                        </div>
+                        <div class="panel-body">
+                                <h2><i class="fa fa-pencil-square"></i> NUEVO MEDICO</h2>
+                                <p>
+                                       Pagina de registro para Nuevos Medicos.
+                                </p>
+                                <hr>
+                               
+                                <form action="" method="post" enctype="multipart/form-data" role="form"  id="form">{% csrf_token %}
+                                        <div class="row">
+                                                <div class="col-md-12">
+                                                        <div class="errorHandler alert alert-danger no-display">
+                                                                <i class="fa fa-times-sign"></i> El formulario contine errores.
+                                                        </div>
+                                                        <div class="successHandler alert alert-success no-display">
+                                                                <i class="fa fa-ok"></i> Formulario guardado con exìto
+                                                        </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                        <div class="form-group">
+                                                                <label class="control-label">
+                                                                        Nombre <span class="symbol required"></span>
+                                                                </label>
+                                                                {{form.username}}
+                                                        </div>
+                                                        <div class="form-group">
+                                                                <label class="control-label">
+                                                                        Nombre <span class="symbol required"></span>
+                                                                </label>
+                                                                {{form.first_name}}
+                                                        </div>
+                                                        <div class="form-group">
+                                                                <label class="control-label">
+                                                                        Apellido <span class="symbol required"></span>
+                                                                </label>
+                                                                {{form.last_name}}
+                                                        </div>
+                                                        <div class="form-group">
+                                                                <label class="control-label">
+                                                                        Correo Electronico <span class="symbol required"></span>
+                                                                </label>
+                                                                 {{form.email}}
+                                                        </div>
+                                                        <div class="form-group">
+                                                                <label class="control-label">
+                                                                        Password <span class="symbol required"></span>
+                                                                </label>
+                                                                 {{form.password1}}
+                                                        </div>
+                                                        <div class="form-group">
+                                                                <label class="control-label">
+                                                                        Confirmar Contraseña <span class="symbol required"></span>
+                                                                </label>
+                                                                {{form.password2}}
+                                                        </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                                                                          
+                                                       
+                                                        <div class="form-group">
+                                                                <label class="control-label">
+                                                                       Sexo <span class="symbol required"></span>
+                                                                </label>
+                                                                <div>
+                                                                        {{form.sexo}}
+                                                                </div>
+                                                        </div>
+                                                        <div class="row">
+                                                                <div class="col-md-4">
+                                                                        <div class="form-group">
+                                                                                <label class="control-label">
+                                                                                        Especialidad <span class="symbol required"></span>
+                                                                                </label>
+                                                                               {{form.especialidad}}
+                                                                        </div>
+                                                                </div>
+                                                                <div class="col-md-8">
+                                                                        <div class="form-group">
+                                                                                <label class="control-label">
+                                                                                       Telefono <span class="symbol required"></span>
+                                                                                </label>
+                                                                                {{form.telefono}}
+                                                                        </div>
+                                                                </div>
+                                                             <div class="col-md-8">
+                                                                        <div class="form-group">
+                                                                            <div class="col-sm-12">
+                                                                                            <label>
+                                                                                                   Firma Digital
+                                                                                            </label>
+                                                                                            <div class="fileupload fileupload-new" data-provides="fileupload">
+                                                                                                    <div class="fileupload-new thumbnail"><img src="http://www.placehold.it/500x250/EFEFEF/AAAAAA?text=no+image" alt=""/>
+                                                                                                    </div>
+
+                                                                                                    <div class="fileupload-preview fileupload-exists thumbnail"></div>
+
+                                                                                                    <div>
+                                                                                                            <span class="btn btn-light-grey btn-file"><span class="fileupload-new"><i class="fa fa-picture-o"></i> Select image</span><span class="fileupload-exists"><i class="fa fa-picture-o"></i> Change</span>
+                                                                                                                    {{form.firma}}
+                                                                                                            </span>
+                                                                                                            <a href="#" class="btn fileupload-exists btn-light-grey" data-dismiss="fileupload">
+                                                                                                                    <i class="fa fa-times"></i> Remover
+                                                                                                            </a>
+                                                                                                    </div>
+                                                                                            </div>
+
+                                                                                            <div class="alert alert-warning">
+                                                                                                    <span class="label label-warning">NOTE!</span>
+                                                                                                    <span> Image preview only works in IE10+, FF3.6+, Chrome6.0+ and Opera11.1+. In older browsers and Safari, the filename is shown instead. </span>
+                                                                                            </div>
+                                                                                    </div>
+                                                                            
+                                                                        </div>
+                                                                </div>
+                                                            
+                                                             <div class="col-md-8">
+                                                                        <div class="form-group">
+                                                                                <div class="col-sm-12">
+                                                                                            <label>
+                                                                                                    Imagen Perfil
+                                                                                            </label>
+                                                                                            <div class="fileupload fileupload-new" data-provides="fileupload">
+                                                                                                    <div class="fileupload-new thumbnail"><img src="http://www.placehold.it/500x250/EFEFEF/AAAAAA?text=no+image" alt=""/>
+                                                                                                    </div>
+
+                                                                                                    <div class="fileupload-preview fileupload-exists thumbnail"></div>
+
+                                                                                                    <div>
+                                                                                                            <span class="btn btn-light-grey btn-file"><span class="fileupload-new"><i class="fa fa-picture-o"></i> Select image</span><span class="fileupload-exists"><i class="fa fa-picture-o"></i> Change</span>
+                                                                                                                    {{form.imgperfil}}
+                                                                                                            </span>
+                                                                                                            <a href="#" class="btn fileupload-exists btn-light-grey" data-dismiss="fileupload">
+                                                                                                                    <i class="fa fa-times"></i> Remover
+                                                                                                            </a>
+                                                                                                    </div>
+                                                                                            </div>
+
+                                                                                            <div class="alert alert-warning">
+                                                                                                    <span class="label label-warning">NOTE!</span>
+                                                                                                    <span> Image preview only works in IE10+, FF3.6+, Chrome6.0+ and Opera11.1+. In older browsers and Safari, the filename is shown instead. </span>
+                                                                                            </div>
+                                                                                    </div>
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                        
+                                                </div>
+                                        </div>
+                                        <div class="row">
+                                                <div class="col-md-12">
+                                                        <div>
+                                                                <span class="symbol required"></span>Required Fields
+                                                                <hr>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="row">
+                                                <div class="col-md-8">
+                                                        <p>
+                                                                By clicking REGISTER, you are agreeing to the Policy and Terms &amp; Conditions.
+                                                        </p>
+                                                </div>
+                                                <div class="col-md-4">
+                                                        <button class="btn btn-yellow btn-block" type="submit">
+                                                                Registrar <i class="fa fa-arrow-circle-right"></i>
+                                                        </button>
+                                                </div>
+                                        </div>
+                                </form>
+                        </div>
+                </div>
+               
+               
+               
+               <!-- end: FORM WIZARD PANEL -->
+       </div>
+</div>
+						<!-- end: PAGE CONTENT-->
+			
+<!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+		
+		<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->	
+
+				
+
+{% endblock %}
