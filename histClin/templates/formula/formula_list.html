@@ -1,0 +1,169 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+{% block extrastatic %}	
+{% endblock %}
+<div class="row">
+       <div class="col-md-12">
+               <ol class="breadcrumb">
+                       <li>
+                               <a href="#">
+                                       Dashboard
+                               </a>
+                       </li>
+                       <li class="active">
+                               Formula
+                       </li>
+               </ol>
+       </div>
+</div>
+<!-- end: BREADCRUMB -->
+<!-- start: PAGE CONTENT -->
+<div class="row">
+       <div class="col-sm-12">
+               <!-- start: FORM WIZARD PANEL -->
+        
+               <div class="panel panel-white">
+                      
+                   <hr>
+                   
+           <div class="panel-body">
+               
+                            <thead>
+                 <div class="invoice">
+                     
+                  
+                               {% for formula in formu %}    
+                                   {% for paciente in pacientes %} 
+                                          {% for medico in medicos%}
+           
+                     
+                                          
+                                                     
+                                                    <h6><strong>Fecha de Expediciòn </strong>  {{ formula.fecha_creacion}}</h6>
+                                               
+                                                               
+                     <div class="col-sm-4">
+                              <div class="well">
+                                        <address>
+                                            <strong>Medico :</strong>{{ medico.first_name|capfirst}} {{ medico.last_name|capfirst}}<br>
+                                            <strong>Especialidad :</strong>{{medico.especialidad}}<br>
+                                            <strong>Doc :</strong>{{medico.Doc}}<br>
+                                            <strong>RM :</strong>{{medico.rm}}<br>
+                                                <strong>Nombre :</strong>  {{paciente.nombre|capfirst}}  {{paciente.apellidos|capfirst}}
+                                                <strong>Doc:</strong>
+                                                {{paciente.Doc}}
+                                     
+                                        </address>
+                                       
+                                                
+                                </div>
+                        </div>
+                
+                     
+                                                    
+                       <style>  .datagrid table { border-collapse: collapse; 
+                                        text-align: left;
+                                        width: 100%; }
+                      .datagrid {font: normal 12px/150% Courier New, Courier, monospace;
+                                background: #fff;
+                                overflow: hidden;
+                                border: 3px solid #006699;
+                                -webkit-border-radius: 6px;
+                                -moz-border-radius: 6px; border-radius: 6px; }
+                      .datagrid table td, .datagrid table th { padding: 4px 10px; }
+                      .datagrid table tbody td { color: #00557F;
+                                                border-left: 1px solid #E1EEF4;
+                                                font-size: 12px;
+                                                font-weight: normal; }
+                      .datagrid table tbody .alt td { background: #E1EEf4;
+                               color: #00557F; }
+                      .datagrid table tbody td:first-child { border-left: none; }
+                      .datagrid table tbody tr:last-child td { border-bottom: none; }</style>
+                       
+                        <table class="table table-bordered table-hover" id="sample-table-4">      
+                                       
+                                                    
+                            </table>
+                                    </div>
+                                                                             
+                                        <div class="datagrid"><table>
+                                            <tbody><tr><td><strong>Medicamento: </strong></td><td>{{formula.medicamento}}</td></tr>
+                                            <tr class="alt"><td><strong>Dosificaciòn: </strong> </td><td>{{formula.dosificacion}}</td></tr>
+                                            <tr><td><strong>cantidad: </strong></td><td>{{formula.cantidad}}</td></tr>
+                                            <tr class="alt"><td><strong>Medicamento:</strong></td><td>{{formula.medicamento2}}</td></tr>
+                                            <tr><td><strong>Dosificaciòn:</strong></td><td>{{formula.dosificacion2}}</td></tr>
+                                            <tr class="alt"><td><strong>cantidad: </strong></td><td>{{formula.cantidad2}}</td></tr>
+                                            <tr><td><strong>Medicamento:</strong></td><td>{{formula.medicamento3}}</td></tr>
+                                            <tr class="alt"><td><strong>Dosificaciòn:</strong></td><td>{{formula.dosificacion3}}</td></tr>
+                                            <tr><td><strong>cantidad:</strong> </td><td>{{formula.cantidad3}}</td></tr>
+                                            <tr class="alt"><td><strong>observaciones:</strong></td><td>{{formula.observaciones}}</td></tr>
+                                        </tbody>
+                                        </table></div>
+                            
+                               
+                            <h6><strong>Prescribe:</strong>  {{ medico.first_name|capfirst}} {{ medico.last_name|capfirst}}</h6> 
+                            {% load static %}
+                            <h6><strong>Firma:</strong><img src="{% static medico.firma.url %}" width="150" height="60" class="img-responsive">
+                                        {% endfor %}
+                            {%endfor%}                                                                                
+                                  
+                                    
+                                    
+                                    
+                                    {%endfor%}   
+     
+                            <!--inicio-->
+                        
+                            <hr>
+                                            
+                               
+                                <div>
+                            <hr>        
+                       
+                                    
+                                                                    
+                                </div>
+                             <hr>   
+                       
+                          
+             <div class="row">
+                <div class="col-sm-12">
+                        
+                         </div>   
+                    </div>
+                       
+             </div>                         
+             
+                            <!--fin--->
+                                    
+                            
+                                    
+                       
+                               
+                           </div>
+                        </div>
+                         <div class="row">
+                           <div class="col-sm-12">
+                                                    <br>
+                                                    <a onclick="javascript:window.print();" class="btn btn-lg btn-light-blue hidden-print">
+                                                            Print <i class="fa fa-print"></i>
+                                                    </a>
+                                                    
+                                            </div>
+                                    </div>
+                            </div>
+                    </div>
+            </div>
+               <!-- end: FORM WIZARD PANEL -->
+        </div>
+</div>
+						<!-- end: PAGE CONTENT-->
+			
+<!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+		
+		<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->	
+
+				
+
+{% endblock %}

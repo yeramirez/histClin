@@ -1,0 +1,46 @@
+
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+
+<div class="row">
+       <div class="col-md-12">
+               <ol class="breadcrumb">
+                       <li>
+                               <a href="#">
+                                       Dashboard
+                               </a>
+                       </li>
+                       <li class="active">
+                               Borrar
+                       </li>
+               </ol>
+       </div>
+</div>
+<!-- end: BREADCRUMB -->
+<!-- start: PAGE CONTENT -->
+<div class="row">
+       <div class="col-sm-12">
+               <!-- start: FORM WIZARD PANEL -->
+        
+          <form method="post">{% csrf_token %}
+	<h3>¿Desea eliminar el registro de {{ medico.first_name}} {{ medico.last_name}}?</h3>
+	
+	<button class="btn btn-danger" type="submit">Sì, Eliminar</button>
+	<a class= "btn btn-default" href="{% url 'paciente:paciente_listar' %}">Cancelar</a>
+	
+</form>
+               
+               <!-- end: FORM WIZARD PANEL -->
+       </div>
+</div>
+						<!-- end: PAGE CONTENT-->
+			
+<!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+		
+		<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->	
+
+				
+
+{% endblock %}

@@ -63,6 +63,6 @@ class HistoriaForm(forms.ModelForm):
             'extremidades': forms.TextInput(attrs={'class':'form-control'}),
             'piel_anexos': forms.TextInput(attrs={'class':'form-control'}),
             'observaciones': forms.Textarea(attrs={'class':'form-control'}),
-            'fecha_creacion' : DateTimePicker(options={"format": "YYYY-MM-DD", "pickTime": False},attrs={'class':'form-control'}),
+            'fecha_creacion' : forms.TextInput(attrs={'class':'form-control date-picker', 'data-date-format':'yyyy-mm-dd'}),
             
         }

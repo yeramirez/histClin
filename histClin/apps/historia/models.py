@@ -8,7 +8,7 @@ class Historia(models.Model):
         observacion_Entorno_familiar = models.TextField()
         motivo_consulta =  models.TextField()
         antecedentes_personales = models.TextField()
-        alergicos = models.CharField(max_length=100)
+        alergicos = models.CharField(max_length=1005)
         vacuna = models.ImageField(upload_to='vacuna')
         examen_fisico= models.TextField()
         fc = models.IntegerField()

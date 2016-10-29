@@ -1,6 +1,0 @@
-
-print("¿Ingresa una Frecuencia?")
-frecuencia = input()
-
-if frecuencia >30  y < 300:
-    print("L/F")

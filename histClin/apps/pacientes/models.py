@@ -15,11 +15,11 @@ class Paciente(models.Model):
         edad = models.IntegerField()
         Doc  = models.IntegerField(unique=True)
         domicilio = models.CharField(max_length=30)
-        colegio = models.CharField(max_length=10)
+        colegio = models.CharField(max_length=40)
         grado = models.IntegerField()
         Medico = models.ForeignKey(Medico, null=True, blank=True, on_delete=models.CASCADE)
-        madre = models.CharField(max_length=10)
-        padre = models.CharField(max_length=10)
+        madre = models.CharField(max_length=40)
+        padre = models.CharField(max_length=40)
         telefono = models.IntegerField()
         
         

@@ -236,12 +236,12 @@
       }
     },
 
-    formatTime: function(hour, minute, second, meridian) {
+    formatTime: function(hour, minute, second) {
       hour = hour < 10 ? '0' + hour : hour;
       minute = minute < 10 ? '0' + minute : minute;
       second = second < 10 ? '0' + second : second;
 
-      return hour + ':' + minute + (this.showSeconds ? ':' + second : '') + (this.showMeridian ? ' ' + meridian : '');
+      return hour + ':' + minute + (this.showSeconds ? ':' + second : '') ;
     },
 
     getCursorPosition: function() {
@@ -273,12 +273,12 @@
         hourTemplate = '<input type="text" name="hour" class="bootstrap-timepicker-hour form-control" maxlength="2"/>';
         minuteTemplate = '<input type="text" name="minute" class="bootstrap-timepicker-minute form-control" maxlength="2"/>';
         secondTemplate = '<input type="text" name="second" class="bootstrap-timepicker-second form-control" maxlength="2"/>';
-        meridianTemplate = '<input type="text" name="meridian" class="bootstrap-timepicker-meridian form-control" maxlength="2"/>';
+        
       } else {
         hourTemplate = '<span class="bootstrap-timepicker-hour"></span>';
         minuteTemplate = '<span class="bootstrap-timepicker-minute"></span>';
         secondTemplate = '<span class="bootstrap-timepicker-second"></span>';
-        meridianTemplate = '<span class="bootstrap-timepicker-meridian"></span>';
+        
       }
 
       templateContent = '<table>'+
@@ -290,10 +290,7 @@
              '<td class="separator">&nbsp;</td>'+
              '<td><a href="#" data-action="incrementSecond"><i class="' + this.upArrowStyle + '"></i></a></td>'
            : '') +
-           (this.showMeridian ?
-             '<td class="separator">&nbsp;</td>'+
-             '<td class="meridian-column"><a href="#" data-action="toggleMeridian"><i class="' + this.upArrowStyle + '"></i></a></td>'
-           : '') +
+           
          '</tr>'+
          '<tr>'+
            '<td>'+ hourTemplate +'</td> '+
@@ -303,10 +300,7 @@
             '<td class="separator">:</td>'+
             '<td>'+ secondTemplate +'</td>'
            : '') +
-           (this.showMeridian ?
-            '<td class="separator">&nbsp;</td>'+
-            '<td>'+ meridianTemplate +'</td>'
-           : '') +
+          
          '</tr>'+
          '<tr>'+
            '<td><a href="#" data-action="decrementHour"><i class="' + this.downArrowStyle + '"></i></a></td>'+
@@ -316,10 +310,7 @@
             '<td class="separator">&nbsp;</td>'+
             '<td><a href="#" data-action="decrementSecond"><i class="' + this.downArrowStyle + '"></i></a></td>'
            : '') +
-           (this.showMeridian ?
-            '<td class="separator">&nbsp;</td>'+
-            '<td><a href="#" data-action="toggleMeridian"><i class="' + this.downArrowStyle + '"></i></a></td>'
-           : '') +
+           
          '</tr>'+
        '</table>';
 

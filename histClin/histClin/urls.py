@@ -24,6 +24,7 @@ from django.contrib.auth.views import login, logout_then_login
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^pacientes/', include('apps.pacientes.urls', namespace='paciente')),
+     url(r'^formula/', include('apps.formula.urls', namespace='formula')),
     url(r'^historia/', include('apps.historia.urls', namespace='historia')),
     url(r'^medicos/', include ('apps.medico.urls', namespace='medico')),
     url(r'^accounts/login/', login,{'template_name':'index.html'},name='login' ),

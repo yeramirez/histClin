@@ -1,0 +1,275 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+
+<div class="row">
+       <div class="col-md-12">
+               <ol class="breadcrumb">
+                       <li>
+                               <a href="#">
+                                       Dashboard
+                               </a>
+                       </li>
+                       <li class="active">
+                               Medicos
+                       </li>
+               </ol>
+       </div>
+</div>
+<!-- end: BREADCRUMB -->
+<!-- start: PAGE CONTENT -->
+<div class="row">
+    <div class="col-sm-12">
+            <!-- start: FORM WIZARD PANEL -->
+
+     <div class="panel panel-white">
+        <div class="panel-heading">
+                <h4 class="panel-title">Text <span class="text-bold">Area</span></h4>
+                <div class="panel-tools">
+                        <div class="dropdown">
+                                <a data-toggle="dropdown" class="btn btn-xs dropdown-toggle btn-transparent-grey">
+                                        <i class="fa fa-cog"></i>
+                                </a>
+                                <ul class="dropdown-menu dropdown-light pull-right" role="menu">
+                                        <li>
+                                                <a class="panel-collapse collapses" href="#"><i class="fa fa-angle-up"></i> <span>Collapse</span> </a>
+                                        </li>
+                                        <li>
+                                                <a class="panel-refresh" href="#">
+                                                        <i class="fa fa-refresh"></i> <span>Refresh</span>
+                                                </a>
+                                        </li>
+                                        <li>
+                                                <a class="panel-config" href="#panel-config" data-toggle="modal">
+                                                        <i class="fa fa-wrench"></i> <span>Configurations</span>
+                                                </a>
+                                        </li>
+                                        <li>
+                                                <a class="panel-expand" href="#">
+                                                        <i class="fa fa-expand"></i> <span>Fullscreen</span>
+                                                </a>
+                                        </li>
+                                </ul>
+                        </div>
+                        <a class="btn btn-xs btn-link panel-close" href="#">
+                                <i class="fa fa-times"></i>
+                        </a>
+                </div>
+        </div>
+       
+           
+                    <div class="panel-body">
+                         <form action="" method="post" enctype="multipart/form-data" role="form" class="smart-wizard form-horizontal" id="form">{% csrf_token %}
+                        
+                        <div class="form-group">
+                        <label class="col-sm-3 control-label" >
+                                   Seleccione un Medico <span class="symbol required"></span>
+                        </label>
+                            <div class="col-sm-7">
+                                    {{form.medicos}}
+                            </div>
+                        </div>
+                        
+                            
+                           <div class="form-group">
+                                                           
+                                    <label class="col-sm-3 control-label" >
+                                            Seleccione un paciente <span class="symbol required"></span>
+                                    </label>
+                              <div class="row">  
+                                    <div class="col-xs-2">
+                                        {{ form.pacientes_f }}
+                                    </div>
+                                  <div>
+                                     <div class="col-xs-1">
+                                          <div class="toolbar-tools pull-right">
+                                              <li class="menu-search" >
+                                                     <a href="">
+                                                             <i class="fa fa-search"></i>   
+                                                     </a>
+                                                     <!-- start: SEARCH POPOVER -->
+                                                     <div class="popover bottom search-box transition-all col-sm-1">
+                                                             <div class="arrow"></div>
+                                                         <div class="popover-content">
+                                                                     <!-- start: SEARCH FORM -->
+
+                                                             <div class="input-group">
+                                                                     &nbsp;&nbsp;<input type='text' name='cadenaBusqueda' onKeyUp="buscar_op(document.getElementById('id_pacientes_f'),this.value)">
+                                                                     <span class="input-group-btn">
+                                                                             <button class="btn btn-main-color btn-squared" type="button">
+                                                                                     <i class="fa fa-search"></i>
+                                                                             </button> </span>
+                                                             </div>
+                                                         </div>
+                                                     </div>
+                                                     <!-- end: SEARCH POPOVER -->
+                                                 </li>
+                                          </div>
+                                       </div>    
+                                  </div>                                     <!-- termina -->                    
+                            </div>
+                         </div>
+
+                        
+                            <div class="form-group">
+                                   <label class="col-sm-3 control-label" >
+                                           Fecha de Creacion <span class="symbol required"></span>
+                                   </label>
+                                
+                                   <div class="col-sm-2  input-append bootstrap-datetimepicker">
+                                           {{form.fecha_creacion}}
+                                      <span class="input-group-addon"> <i class="fa fa-calendar"></i> </span>
+                                   </div>
+                             
+                                <label class="col-sm-1 control-label">
+                                    Hora F/24h hh:mm
+                                </label> 
+                                <div class="input-append bootstrap-timepicker col-sm-2 " >
+                                        {{form.hora }}
+                                        <span class="input-group-addon add-on"><i class="fa fa-clock-o"></i></span>
+                                </div>
+                             </div>
+                             <div class="well">
+
+                             
+                            <div class="form-group">
+                                   <label class="col-sm-2 control-label" >
+                                           Medicamento <span class="symbol required"></span>
+                                   </label>
+                                   <div class="col-sm-7">
+                                            {{form.medicamento}}
+                                           
+                                   </div>
+                           </div>
+                              <div class="form-group">
+                                   <label class="col-sm-2 control-label" >
+                                           Dosificaciòn <span class="symbol required"></span>
+                                   </label>
+                                   <div class="col-sm-7">
+                                            {{form.dosificacion}}
+                                           
+                                   </div>
+                           </div>
+                              <div class="form-group">
+                                   <label class="col-sm-2 control-label" >
+                                           Cantidad <span class="symbol required"></span>
+                                   </label>
+                                   <div class="col-xs-1">
+                                            {{form.cantidad}}
+                                           
+                                   </div>
+                           </div>
+                              <div class="form-group">
+                                   <label class="col-sm-2 control-label" >
+                                          Medicamento 2<span class="symbol required"></span>
+                                   </label>
+                                   <div class="col-sm-7">
+                                            {{form.medicamento2}}
+                                           
+                                   </div>
+                           </div>
+                           
+                               <div class="form-group">
+                                   <label class="col-sm-2 control-label" >
+                                           Dosificaciòn  <span class="symbol required"></span>
+                                   </label>
+                                   <div class="col-sm-7">
+                                            {{form.dosificacion2}}
+                                           
+                                   </div>
+                           </div>
+                                <div class="form-group">
+                                   <label class="col-sm-2 control-label" >
+                                           Cantidad <span class="symbol required"></span>
+                                   </label>
+                                   <div class="col-xs-1">
+                                            {{form.cantidad2}}
+                                           
+                                   </div>
+                           </div>
+                                <div class="form-group">
+                                   <label class="col-sm-2 control-label" >
+                                           Medicamento 3<span class="symbol required"></span>
+                                   </label>
+                                   <div class="col-sm-7">
+                                            {{form.medicamento3}}
+                                           
+                                   </div>
+                           </div>
+                              <div class="form-group">
+                                   <label class="col-sm-2 control-label" >
+                                           Dosificaciòn<span class="symbol required"></span>
+                                   </label>
+                                   <div class="col-sm-7">
+                                            {{form.dosificacion3}}
+                                           
+                                   </div>
+                           </div>
+                              <div class="form-group">
+                                   <label class="col-sm-2 control-label" >
+                                           Cantidad <span class="symbol required"></span>
+                                   </label>
+                                   <div class="col-xs-1">
+                                            {{form.cantidad3}}
+                                           
+                                   </div>
+                           </div>
+                              <div class="form-group">
+                                   <label class="col-sm-2 control-label" >
+                                           Observaciones <span class="symbol required"></span>
+                                   </label>
+                                   <div class="col-sm-7">
+                                            {{form.observaciones}}
+                                           
+                                   </div>
+                           </div>
+                                                    
+                       
+
+                        <div class="form-group">
+                            <div class="col-sm-2 col-sm-offset-8">
+                                    <button type="submit" class="btn btn-success">
+                                            Finish <i class="fa fa-arrow-circle-right"></i>
+
+                                    </button>
+                            </div>
+                       </div>                                            
+                    </form>
+                        
+                </div>
+       
+        
+         <!-- end: FORM WIZARD PANEL -->
+        </div>
+    </div>
+</div>
+
+
+{% block extrajs %}
+
+<script> 
+            function buscar_op(obj,cadena){ 
+               var puntero=cadena.length; 
+               var encontrado=false; 
+               var opcombo=0; 
+                  while (!encontrado && (opcombo < obj.length)){ 
+                    if(obj[opcombo].text.substr(0,puntero).toLowerCase()==cadena.toLowerCase()){ 
+                       obj.selectedIndex=opcombo; 
+                       encontrado=true; 
+                       }else{ 
+                        opcombo++; 
+                     } 
+                  } 
+            } 
+</script>
+{% endblock %}
+<!-- end: PAGE CONTENT-->
+			
+<!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+		
+		<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->	
+
+				
+
+{% endblock %}

@@ -28,11 +28,14 @@ class MedicoForm(UserCreationForm):
             'telefono',
             'firma',
             'imgperfil',
+            'rm',
+            'Doc',
          ]
         
         widgets = {
         
             'username':forms.TextInput(attrs={'class':'form-control'}),
+            'rm':forms.TextInput(attrs={'class':'form-control'}),
             'especialidad':forms.TextInput(attrs={'class':'form-control'}),
             'telefono':forms.TextInput(attrs={'class':'form-control'}),
             'password1':forms.TextInput(attrs={'class':'form-control','type':'password'}),
@@ -40,9 +43,10 @@ class MedicoForm(UserCreationForm):
             'first_name':forms.TextInput(attrs={'class':'form-control'}), 
             'last_name':forms.TextInput(attrs={'class':'form-control'}),
             'sexo': forms.Select(attrs={'class':'form-form-control'},choices=TITLE_SEXO),
-            'email':forms.EmailInput(attrs={'class':'form-form-control'}),
+            'email':forms.EmailInput(),
             'especialidad':forms.TextInput(attrs={'class':'form-control'}), 
             'telefono':forms.TextInput(attrs={'class':'form-control'}),
+            'Doc':forms.TextInput(attrs={'class':'form-control'}),
             'firma':forms.FileInput(attrs={'class':'fileupload-new'}),
             'imgperfil':forms.FileInput(attrs={'class':'fileupload-new'}),
         

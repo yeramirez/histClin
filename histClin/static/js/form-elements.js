@@ -96,6 +96,7 @@ var FormElements = function() {
 	//function to initiate bootstrap-timepicker
 	var runTimePicker = function() {
 		$('.time-picker').timepicker();
+                    format: 'h:mm:ss'
 	};
 	//function to initiate daterangepicker
 	var runDateRangePicker = function() {
@@ -103,7 +104,7 @@ var FormElements = function() {
 		$('.date-time-range').daterangepicker({
 			timePicker: true,
 			timePickerIncrement: 15,
-			format: 'MM/DD/YYYY h:mm A'
+			format: 'MM/DD/YYYY h:mm:ss'
 		});
 	};
 	//function to initiate bootstrap-colorpicker
