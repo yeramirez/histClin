@@ -38,7 +38,7 @@ class FormulaForm(forms.ModelForm):
             'medicos': forms.Select(attrs={'class':'form-form-control'}),
             'pacientes_f': forms.Select(attrs={'class':'form-form-control'}),
             'observaciones': forms.Textarea(attrs={'class':'form-control'}),
-            'recomendaciones':forms.TextInput(attrs={'class':'form-control'}),
+            'recomendaciones':forms.Textarea(attrs={'class':'form-control'}),
             'fecha_creacion' : forms.TextInput(attrs={'class':'form-control date-picker','data-date-format':'yyyy-mm-dd'}),
             'hora' : forms.TextInput( attrs={"data-date-format": "hh:mm:ss A",'class':'form-control'}),
             'medicamento': forms.TextInput(attrs={'class':'form-control'}),

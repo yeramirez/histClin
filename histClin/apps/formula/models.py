@@ -5,8 +5,8 @@ from apps.pacientes.models import Paciente
 class Formulas(models.Model):
     medicos=models.ForeignKey(Medico, null=True, blank=True, on_delete=models.CASCADE)
     pacientes_f=models.ForeignKey(Paciente, null=True, blank=True, on_delete=models.CASCADE)
-    medicamento = models.CharField(max_length=30)
-    dosificacion= models.CharField(max_length=30)
+    medicamento = models.CharField(max_length=30,blank=True)
+    dosificacion= models.CharField(max_length=30,blank=True)
     cantidad = models.CharField(null=True,blank=True,max_length=30)
     medicamento2 = models.CharField(null=True,blank=True,max_length=30)
     dosificacion2= models.CharField(null=True,blank=True,max_length=30)

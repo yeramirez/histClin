@@ -33,7 +33,7 @@ class Formula_Crear(CreateView):
                         medicos=request.POST['medicos']
                         pacientes=Paciente.objects.filter(pk=paciente)
                         medicosl=Medico.objects.filter(pk=medicos)
-                        print(medicosl)
+                        
                         formu =  Formulas.objects.filter(fecha_creacion=buscar,hora=hora)
       
                         return render(request,'formula/formula_list.html', {'formu':formu, 'pacientes':pacientes,'medicos':medicosl })
@@ -45,4 +45,32 @@ class Formula_Listar(ListView):
         
     model = Formulas
    
-  
+class Recomendaciones_crear(CreateView):
+    
+    model = Formulas
+    form_class = FormulaForm
+    template_name = 'formula/recomendacion.html'
+    
+    
+    def post(self, request,  *args, **kwargs ):
+        if request.method == 'POST':
+                form = FormulaForm(request.POST)
+                if form.is_valid():
+                        form.save()
+                        buscar = request.POST['fecha_creacion']
+                        hora = request.POST['hora']
+                        paciente=request.POST['pacientes_f']
+                        medicos=request.POST['medicos']
+                        pacientes=Paciente.objects.filter(pk=paciente)
+                        medicosl=Medico.objects.filter(pk=medicos)
+                        
+                        formu =  Formulas.objects.filter(fecha_creacion=buscar,hora=hora)
+      
+                        return render(request,'formula/recomendaciones_list.html', {'formu':formu, 'pacientes':pacientes,'medicos':medicosl })
+        else:
+            form = MascotaForm()
+        return render(request, self.template_name, {'form':form}) 
+
+    
+    
+    
